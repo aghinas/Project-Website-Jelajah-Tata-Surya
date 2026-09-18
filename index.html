@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jelajah Tata Surya — Beranda</title>
+  <meta name="description" content="Pengantar tata surya untuk pelajar: satu bintang, delapan planet, dan fakta-fakta yang jarang diajarkan di kelas.">
+
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
+
+  <!-- style.css = milik bersama (token warna, navbar, footer, tombol).
+       beranda.css = khusus halaman ini. Halaman 2 dan 3 cukup memuat
+       style.css lalu file CSS-nya sendiri. -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/beranda.css">
+</head>
+
+<body>
+  <a class="lewati-nav" href="#konten">Lompat ke konten</a>
+
+  <!-- ============ NAVBAR BERSAMA (salin apa adanya ke halaman lain) ============ -->
+  <header class="site-header">
+    <div class="wrap site-header__isi">
+      <a class="site-merek" href="index.html">
+        <img src="assets/logo.svg" alt="" width="34" height="34">
+        <span>Jelajah Tata Surya</span>
+      </a>
+
+      <button class="site-nav__tombol" type="button" aria-expanded="false" aria-controls="menu-utama">
+        <span class="site-nav__garis" aria-hidden="true"></span>
+        Menu
+      </button>
+
+      <nav id="menu-utama" class="site-nav" aria-label="Navigasi utama">
+        <a href="index.html" class="site-nav__tautan is-aktif">Beranda</a>
+        <a href="planet.html" class="site-nav__tautan">Planet</a>
+        <a href="misi.html" class="site-nav__tautan">Misi Antariksa</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="konten">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <img class="hero__orbit" src="assets/orbit.svg" alt="" aria-hidden="true">
+      <div class="wrap hero__isi">
+        <p class="hero__pengantar">Bahan belajar astronomi dasar</p>
+        <h1 class="hero__judul">Satu bintang, delapan planet, dan ruang sunyi di antaranya.</h1>
+        <p class="hero__teks">
+          Tata surya adalah alamat kita di alam semesta. Semua yang ada di dalamnya, mulai
+          dari planet raksasa sampai butiran debu, terikat oleh gravitasi sebuah bintang
+          berumur sekitar 4,6 miliar tahun. Halaman ini mengajak kamu berkenalan dengan
+          isinya sebelum masuk ke pembahasan yang lebih dalam.
+        </p>
+        <div class="hero__aksi">
+          <a class="btn btn--utama" href="#planet">Lihat urutan planet</a>
+          <a class="btn btn--garis" href="#fakta">Baca fakta singkat</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PEMBUKAAN ============ -->
+    <section class="pembuka" id="pembuka">
+      <div class="wrap pembuka__kisi">
+        <div class="pembuka__narasi">
+          <h2>Apa sebenarnya tata surya itu</h2>
+          <p>
+            Tata surya terbentuk ketika sebuah awan raksasa berisi gas dan debu runtuh oleh
+            gravitasinya sendiri sekitar 4,6 miliar tahun lalu. Sebagian besar materi awan itu
+            berkumpul di pusat dan menyala menjadi Matahari, sedangkan sisa piringan di
+            sekelilingnya perlahan menggumpal menjadi planet, satelit, asteroid, dan komet.
+          </p>
+          <p>
+            Matahari memegang hampir seluruh massa sistem ini, yaitu sekitar 99,8 persen.
+            Karena itulah semua benda lain bergerak mengikuti tarikannya. Delapan planet
+            mengorbit dengan lintasan yang hampir berada pada satu bidang datar, dan urutannya
+            dari yang paling dekat adalah Merkurius, Venus, Bumi, Mars, Jupiter, Saturnus,
+            Uranus, lalu Neptunus.
+          </p>
+          <p>
+            Ada satu hal yang sering luput, yaitu betapa kosongnya ruang di antara planet.
+            Jarak Bumi ke Matahari sekitar 150 juta kilometer dan dipakai sebagai satuan baku
+            bernama satuan astronomi. Neptunus berada sekitar 30 kali lebih jauh dari itu,
+            sehingga cahaya Matahari yang sampai ke sana jauh lebih redup dibanding yang kita
+            rasakan setiap pagi.
+          </p>
+        </div>
+
+        <aside class="pembuka__data" aria-label="Data ringkas tata surya">
+          <h3>Ringkasan angka</h3>
+          <dl>
+            <div><dt>Umur sistem</dt><dd>±4,6 miliar tahun</dd></div>
+            <div><dt>Bintang induk</dt><dd>1 (Matahari)</dd></div>
+            <div><dt>Planet</dt><dd>8</dd></div>
+            <div><dt>Bagian massa Matahari</dt><dd>±99,8%</dd></div>
+            <div><dt>1 satuan astronomi</dt><dd>±150 juta km</dd></div>
+            <div><dt>Jarak Neptunus</dt><dd>±30 satuan astronomi</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ FUN FACT ============ -->
+    <section class="fakta" id="fakta">
+      <div class="wrap">
+        <h2 class="fakta__judul">Fakta yang bikin kamu berhenti sebentar</h2>
+
+        <div class="fakta__kartu">
+          <p class="fakta__teks" id="fakta-teks" aria-live="polite">
+            Cahaya Matahari butuh sekitar 8 menit 20 detik untuk sampai ke Bumi. Artinya,
+            Matahari yang kamu lihat siang tadi sebenarnya adalah Matahari beberapa menit
+            yang lalu.
+          </p>
+          <div class="fakta__kaki">
+            <span class="fakta__nomor" id="fakta-nomor">Fakta 1 dari 10</span>
+            <button class="btn btn--garis btn--kecil" type="button" id="fakta-tombol">
+              Fakta berikutnya
+            </button>
+          </div>
+        </div>
+
+        <!-- Daftar fakta dibaca oleh js/main.js. Tambah atau kurangi <li> di sini,
+             tidak perlu menyentuh file JavaScript. -->
+        <ul class="fakta__sumber" id="fakta-daftar" hidden>
+          <li>Cahaya Matahari butuh sekitar 8 menit 20 detik untuk sampai ke Bumi. Artinya, Matahari yang kamu lihat siang tadi sebenarnya adalah Matahari beberapa menit yang lalu.</li>
+          <li>Satu hari di Venus lebih panjang daripada satu tahunnya. Venus berputar pada porosnya selama sekitar 243 hari Bumi, sementara satu kali mengelilingi Matahari hanya butuh sekitar 225 hari Bumi.</li>
+          <li>Gunung tertinggi di tata surya bukan Everest, melainkan Olympus Mons di Mars dengan ketinggian sekitar 22 kilometer, kira-kira dua setengah kali tinggi Everest.</li>
+          <li>Saturnus punya kerapatan rata-rata sekitar 0,69 gram per sentimeter kubik, lebih kecil daripada air. Kalau ada kolam yang cukup besar, planet ini secara teori akan mengapung.</li>
+          <li>Jejak kaki astronaut Apollo di Bulan diperkirakan bertahan jutaan tahun, karena Bulan tidak punya atmosfer yang cukup untuk menghasilkan angin dan hujan.</li>
+          <li>Uranus berotasi dalam posisi hampir rebah dengan kemiringan sumbu sekitar 98 derajat, sehingga kutubnya menghadap Matahari bergantian selama puluhan tahun.</li>
+          <li>Venus adalah planet terpanas di tata surya dengan suhu permukaan sekitar 464 derajat Celsius, meski Merkurius berada lebih dekat ke Matahari. Penyebabnya adalah atmosfer tebal berisi karbon dioksida yang memerangkap panas.</li>
+          <li>Pluto sempat dihitung sebagai planet kesembilan sampai Persatuan Astronomi Internasional mendefinisikan ulang istilah planet pada 2006 dan memasukkannya ke kategori planet katai.</li>
+          <li>Voyager 1 memasuki ruang antarbintang pada Agustus 2012 dan sampai sekarang menjadi benda buatan manusia yang paling jauh dari Bumi.</li>
+          <li>Di ruang angkasa tidak ada bunyi yang bisa kita dengar secara langsung, karena gelombang suara butuh medium seperti udara atau air untuk merambat.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ GALERI PLANET ============ -->
+    <section class="planet" id="planet">
+      <div class="wrap">
+        <h2 class="planet__judul">Urutan dari Matahari</h2>
+        <p class="planet__intro">
+          Empat planet pertama berbatu dan berukuran kecil. Empat sisanya adalah raksasa gas
+          dan raksasa es yang jauh lebih besar tetapi tidak punya permukaan padat untuk
+          dipijak.
+        </p>
+
+        <ol class="planet__daftar">
+          <li class="kartu-planet kartu-planet--bintang">
+            <img src="assets/planet/matahari.svg" alt="Ilustrasi Matahari" loading="lazy">
+            <h3>Matahari</h3>
+            <p>Bintang katai kuning dengan suhu permukaan sekitar 5.500 derajat Celsius. Intinya jauh lebih panas, sekitar 15 juta derajat Celsius.</p>
+            <p class="kartu-planet__data">Diameter ±1,39 juta km</p>
+          </li>
+          <li class="kartu-planet">
+            <img src="assets/planet/merkurius.svg" alt="Ilustrasi Merkurius" loading="lazy">
+            <h3>Merkurius</h3>
+            <p>Planet terkecil dan paling dekat dengan Matahari. Tanpa atmosfer berarti, suhunya berayun ekstrem antara siang dan malam.</p>
+            <p class="kartu-planet__data">1 tahun = 88 hari Bumi</p>
+          </li>
+          <li class="kartu-planet">
+            <img src="assets/planet/venus.svg" alt="Ilustrasi Venus" loading="lazy">
+            <h3>Venus</h3>
+            <p>Ukurannya mirip Bumi, tetapi atmosfernya padat oleh karbon dioksida sehingga panas terkunci di permukaan.</p>
+            <p class="kartu-planet__data">Suhu permukaan ±464 °C</p>
+          </li>
+          <li class="kartu-planet">
+            <img src="assets/planet/bumi.svg" alt="Ilustrasi Bumi" loading="lazy">
+            <h3>Bumi</h3>
+            <p>Satu-satunya tempat yang sejauh ini diketahui menampung kehidupan, dengan air dalam wujud cair yang stabil di permukaannya.</p>
+            <p class="kartu-planet__data">Jarak ±150 juta km dari Matahari</p>
+          </li>
+          <li class="kartu-planet">
+            <img src="assets/planet/mars.svg" alt="Ilustrasi Mars" loading="lazy">
+            <h3>Mars</h3>
+            <p>Permukaannya kemerahan karena mengandung banyak oksida besi. Punya dua satelit kecil bernama Phobos dan Deimos.</p>
+            <p class="kartu-planet__data">1 tahun = 687 hari Bumi</p>
+          </li>
+          <li class="kartu-planet">
+            <img src="assets/planet/jupiter.svg" alt="Ilustrasi Jupiter" loading="lazy">
+            <h3>Jupiter</h3>
+            <p>Planet terbesar sekaligus pemilik badai raksasa Bintik Merah Besar yang sudah diamati selama berabad-abad.</p>
+            <p class="kartu-planet__data">1 rotasi ±10 jam</p>
+          </li>
+          <li class="kartu-planet">
+            <img src="assets/planet/saturnus.svg" alt="Ilustrasi Saturnus" loading="lazy">
+            <h3>Saturnus</h3>
+            <p>Sistem cincinnya tersusun dari bongkahan es dan batuan dengan ukuran mulai dari butiran debu sampai sebesar rumah.</p>
+            <p class="kartu-planet__data">1 tahun ±29 tahun Bumi</p>
+          </li>
+          <li class="kartu-planet">
+            <img src="assets/planet/uranus.svg" alt="Ilustrasi Uranus" loading="lazy">
+            <h3>Uranus</h3>
+            <p>Raksasa es yang berotasi nyaris rebah. Warna birunya berasal dari metana di lapisan atas atmosfer.</p>
+            <p class="kartu-planet__data">Kemiringan sumbu ±98°</p>
+          </li>
+          <li class="kartu-planet">
+            <img src="assets/planet/neptunus.svg" alt="Ilustrasi Neptunus" loading="lazy">
+            <h3>Neptunus</h3>
+            <p>Planet terjauh dan pemilik angin paling kencang di tata surya. Ditemukan lewat perhitungan matematis sebelum benar-benar diamati.</p>
+            <p class="kartu-planet__data">1 tahun ±165 tahun Bumi</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ JEMBATAN KE HALAMAN LAIN ============ -->
+    <section class="lanjut" id="lanjut">
+      <div class="wrap lanjut__kisi">
+        <div class="lanjut__kartu">
+          <h3>Profil tiap planet</h3>
+          <p>Data ukuran, atmosfer, satelit, dan kondisi permukaan dibahas satu per satu di halaman berikutnya.</p>
+          <a class="btn btn--garis" href="planet.html">Buka halaman Planet</a>
+        </div>
+        <div class="lanjut__kartu">
+          <h3>Misi antariksa</h3>
+          <p>Cerita wahana yang pernah dikirim manusia untuk memotret dan mengukur isi tata surya dari dekat.</p>
+          <a class="btn btn--garis" href="misi.html">Buka halaman Misi</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER BERSAMA (salin apa adanya ke halaman lain) ============ -->
+  <footer class="site-footer">
+    <div class="wrap site-footer__kisi">
+      <div>
+        <p class="site-footer__merek">Jelajah Tata Surya</p>
+        <p>Proyek pembelajaran mata kuliah pemrograman web. Ilustrasi dibuat sendiri dalam format SVG.</p>
+      </div>
+
+      <div>
+        <h4>Halaman</h4>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="planet.html">Planet</a></li>
+          <li><a href="misi.html">Misi Antariksa</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Rujukan data</h4>
+        <ul>
+          <li><a href="https://science.nasa.gov/solar-system/" target="_blank" rel="noopener">NASA Science — Solar System</a></li>
+          <li><a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/" target="_blank" rel="noopener">NASA Planetary Fact Sheet</a></li>
+          <li><a href="https://www.iau.org/public/themes/pluto/" target="_blank" rel="noopener">IAU — Definisi planet 2006</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="site-footer__bawah">Dibuat untuk keperluan edukasi.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

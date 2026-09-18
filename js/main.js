@@ -1,3 +1,10 @@
+/* =========================================================
+   main.js — dipakai semua halaman.
+   Bagian 1 (menu) berjalan di halaman mana pun.
+   Bagian 2 (fakta) otomatis dilewati kalau elemennya tidak ada,
+   jadi aman dipanggil dari planet.html maupun misi.html.
+   ========================================================= */
+
 (function () {
   "use strict";
 
@@ -22,9 +29,7 @@
 
   var fakta = Array.prototype.map.call(
     daftar.querySelectorAll("li"),
-    function (li) {
-      return li.textContent.trim();
-    },
+    function (li) { return li.textContent.trim(); }
   );
 
   if (fakta.length === 0) return;

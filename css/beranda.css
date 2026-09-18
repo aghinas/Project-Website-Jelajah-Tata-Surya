@@ -1,13 +1,17 @@
+/* =========================================================
+   beranda.css — HANYA UNTUK index.html
+   Dimuat setelah style.css. Semua kelas di sini milik beranda,
+   jadi halaman 2 dan 3 tidak akan bentrok selama pakai nama
+   kelas sendiri (misal planet.css memakai prefiks "pl-").
+   ========================================================= */
+
+/* ---------- Hero ---------- */
 .hero {
   position: relative;
   overflow: hidden;
   padding: clamp(4rem, 11vw, 7.5rem) 0 clamp(3.5rem, 9vw, 6rem);
   background:
-    radial-gradient(
-      900px 520px at 8% 40%,
-      rgba(217, 164, 65, 0.14),
-      transparent 62%
-    ),
+    radial-gradient(900px 520px at 8% 40%, rgba(217, 164, 65, 0.14), transparent 62%),
     linear-gradient(180deg, var(--tinta) 0%, var(--tinta-tua) 100%);
 }
 
@@ -55,9 +59,7 @@
 }
 
 /* ---------- Pembukaan ---------- */
-.pembuka {
-  padding: clamp(3rem, 8vw, 5.5rem) 0;
-}
+.pembuka { padding: clamp(3rem, 8vw, 5.5rem) 0; }
 
 .pembuka__kisi {
   display: grid;
@@ -92,9 +94,7 @@
   border-bottom: 1px solid var(--garis);
 }
 
-.pembuka__data dl {
-  margin: 0;
-}
+.pembuka__data dl { margin: 0; }
 
 .pembuka__data dl > div {
   display: flex;
@@ -104,14 +104,9 @@
   padding: 0.55rem 0;
   border-bottom: 1px dashed rgba(42, 53, 104, 0.85);
 }
-.pembuka__data dl > div:last-child {
-  border-bottom: 0;
-}
+.pembuka__data dl > div:last-child { border-bottom: 0; }
 
-.pembuka__data dt {
-  color: var(--kabut);
-  font-size: 0.88rem;
-}
+.pembuka__data dt { color: var(--kabut); font-size: 0.88rem; }
 
 .pembuka__data dd {
   margin: 0;
@@ -134,7 +129,7 @@
 }
 
 .fakta__kartu {
-  background: linear-gradient(140deg, var(--panel), #131a3c);
+  background: linear-gradient(140deg, var(--panel), #131A3C);
   border: 1px solid var(--garis);
   border-left: 3px solid var(--kuningan);
   border-radius: var(--lengkung);
@@ -165,18 +160,12 @@
 }
 
 /* daftar sumber fakta hanya dibaca JavaScript, tidak perlu tampil */
-.fakta__sumber {
-  display: none;
-}
+.fakta__sumber { display: none; }
 
 /* ---------- Galeri planet ---------- */
-.planet {
-  padding: clamp(3rem, 8vw, 5.5rem) 0;
-}
+.planet { padding: clamp(3rem, 8vw, 5.5rem) 0; }
 
-.planet__judul {
-  font-size: clamp(1.6rem, 3.4vw, 2.2rem);
-}
+.planet__judul { font-size: clamp(1.6rem, 3.4vw, 2.2rem); }
 
 .planet__intro {
   color: var(--kabut);
@@ -201,14 +190,9 @@
   border-radius: var(--lengkung);
   padding: 1.4rem 1.3rem 1.5rem;
   counter-increment: urutan;
-  transition:
-    border-color 0.2s ease,
-    transform 0.2s ease;
+  transition: border-color .2s ease, transform .2s ease;
 }
-.kartu-planet:hover {
-  border-color: rgba(111, 201, 224, 0.55);
-  transform: translateY(-3px);
-}
+.kartu-planet:hover { border-color: rgba(111, 201, 224, 0.55); transform: translateY(-3px); }
 
 .kartu-planet::before {
   content: counter(urutan, decimal);
@@ -226,20 +210,11 @@
   counter-increment: none;
   border-color: rgba(217, 164, 65, 0.45);
 }
-.kartu-planet--bintang::before {
-  content: "bintang induk";
-  font-size: 0.75rem;
-}
+.kartu-planet--bintang::before { content: "bintang induk"; font-size: 0.75rem; }
 
-.kartu-planet img {
-  width: 96px;
-  margin-bottom: 1rem;
-}
+.kartu-planet img { width: 96px; margin-bottom: 1rem; }
 
-.kartu-planet h3 {
-  font-size: 1.22rem;
-  margin-bottom: 0.45rem;
-}
+.kartu-planet h3 { font-size: 1.22rem; margin-bottom: 0.45rem; }
 
 .kartu-planet p {
   color: var(--kabut);
@@ -256,9 +231,7 @@
 }
 
 /* ---------- Jembatan halaman ---------- */
-.lanjut {
-  padding-bottom: clamp(2rem, 6vw, 3.5rem);
-}
+.lanjut { padding-bottom: clamp(2rem, 6vw, 3.5rem); }
 
 .lanjut__kisi {
   display: grid;
@@ -270,36 +243,19 @@
   border: 1px solid var(--garis);
   border-radius: var(--lengkung);
   padding: 1.7rem 1.5rem;
-  background: linear-gradient(
-    160deg,
-    rgba(24, 33, 74, 0.9),
-    rgba(16, 23, 53, 0.9)
-  );
+  background: linear-gradient(160deg, rgba(24, 33, 74, 0.9), rgba(16, 23, 53, 0.9));
 }
 
-.lanjut__kartu h3 {
-  font-size: 1.15rem;
-}
-.lanjut__kartu p {
-  color: var(--kabut);
-  font-size: 0.93rem;
-}
+.lanjut__kartu h3 { font-size: 1.15rem; }
+.lanjut__kartu p { color: var(--kabut); font-size: 0.93rem; }
 
 /* ---------- Responsif ---------- */
 @media (max-width: 880px) {
-  .pembuka__kisi {
-    grid-template-columns: 1fr;
-  }
-  .pembuka__data {
-    position: static;
-  }
+  .pembuka__kisi { grid-template-columns: 1fr; }
+  .pembuka__data { position: static; }
 }
 
 @media (max-width: 520px) {
-  .hero__orbit {
-    opacity: 0.45;
-  }
-  .kartu-planet img {
-    width: 78px;
-  }
+  .hero__orbit { opacity: 0.45; }
+  .kartu-planet img { width: 78px; }
 }

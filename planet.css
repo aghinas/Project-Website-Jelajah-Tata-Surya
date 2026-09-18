@@ -258,6 +258,15 @@ a { color: var(--accent); }
   color: var(--ink);
 }
 
+
+
+/* Gunakan ilustrasi SVG yang sama dengan halaman Beranda */
+.planet-card__visual img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
 /* ==========================================================
    PLANET SPHERES (CSS-drawn, no image assets needed)
    ========================================================== */

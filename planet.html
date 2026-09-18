@@ -13,11 +13,25 @@
 
 <div class="starfield" aria-hidden="true"></div>
 
-<nav class="topnav">
-  <a href="index.html" class="topnav__link">Beranda</a>
-  <a href="planet.html" class="topnav__link topnav__link--active">Planet</a>
-  <a href="fenomena.html" class="topnav__link">Fenomena Tata Surya</a>
-</nav>
+<header class="site-header">
+    <div class="site-header__isi">
+      <a class="site-merek" href="index.html">
+        <img src="assets/logo.svg" alt="" width="34" height="34">
+        <span>Jelajah Tata Surya</span>
+      </a>
+
+      <button class="site-nav__tombol" type="button" aria-expanded="false" aria-controls="menu-utama">
+        <span class="site-nav__garis" aria-hidden="true"></span>
+        Menu
+      </button>
+
+      <nav id="menu-utama" class="site-nav" aria-label="Navigasi utama">
+        <a href="index.html" class="site-nav__tautan">Beranda</a>
+        <a href="planet.html" class="site-nav__tautan is-aktif">Planet</a>
+        <a href="fenomena.html" class="site-nav__tautan">Fenomena Tata Surya</a>
+      </nav>
+    </div>
+  </header>
 
 <header class="hero">
   <p class="hero__eyebrow">Rumah kita di alam semesta</p>
@@ -241,4 +255,15 @@
     </div>
   </section>
 
+<footer class="site-bawah">
+  <p class="site-bawah__nav">
+    <a href="index.html">Beranda</a>
+    <a style="color: white;" href="planet.html">Planet</a>
+    <a style="color: white;" href="fenomena.html" aria-current="page">Fenomena Tata Surya</a>
+  </p>
+  <p class="site-bawah__sumber">
+    Data dirujuk dari NASA Science (Eclipses, Meteors &amp; Meteorites, Jupiter, Mars)
+    dan NASA Planetary Fact Sheet. Ilustrasi dibuat sendiri dalam format SVG.
+  </p>
+</footer>
 </html>

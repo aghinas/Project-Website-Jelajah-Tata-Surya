@@ -14,11 +14,25 @@
 
 <div class="starfield" aria-hidden="true"></div>
 
-<nav class="topnav">
-  <a href="index.html" class="topnav__link">Beranda</a>
-  <a href="planet.html" class="topnav__link">Planet</a>
-  <a href="fenomena.html" class="topnav__link topnav__link--active">Fenomena Tata Surya</a>
-</nav>
+<header class="site-header">
+    <div class="site-header__isi">
+      <a class="site-merek" href="index.html">
+        <img src="assets/logo.svg" alt="" width="34" height="34">
+        <span>Jelajah Tata Surya</span>
+      </a>
+
+      <button class="site-nav__tombol" type="button" aria-expanded="false" aria-controls="menu-utama">
+        <span class="site-nav__garis" aria-hidden="true"></span>
+        Menu
+      </button>
+
+      <nav id="menu-utama" class="site-nav" aria-label="Navigasi utama">
+        <a href="index.html" class="site-nav__tautan">Beranda</a>
+        <a href="planet.html" class="site-nav__tautan">Planet</a>
+        <a href="fenomena.html" class="site-nav__tautan is-aktif">Fenomena Tata Surya</a>
+      </nav>
+    </div>
+  </header>
 
 <header class="hero">
   <p class="hero__eyebrow">Peristiwa yang bisa diamati dan dijelaskan</p>
@@ -352,34 +366,3 @@
     dan NASA Planetary Fact Sheet. Ilustrasi dibuat sendiri dalam format SVG.
   </p>
 </footer>
-
-<footer class="site-footer">
-    <div class="wrap site-footer__kisi">
-      <div>
-        <p class="site-footer__merek">Jelajah Tata Surya</p>
-        <p>Proyek pembelajaran mata kuliah pemrograman web. Ilustrasi dibuat sendiri dalam format SVG.</p>
-      </div>
-
-      <div>
-        <h4>Halaman</h4>
-        <ul>
-          <li><a href="index.html">Beranda</a></li>
-          <li><a href="planet.html">Planet</a></li>
-          <li><a href="fenomena.html">Fenomena Tata Surya</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4>Rujukan data</h4>
-        <ul>
-          <li><a href="https://science.nasa.gov/solar-system/" target="_blank" rel="noopener">NASA Science — Solar System</a></li>
-          <li><a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/" target="_blank" rel="noopener">NASA Planetary Fact Sheet</a></li>
-          <li><a href="https://www.iau.org/public/themes/pluto/" target="_blank" rel="noopener">IAU — Definisi planet 2006</a></li>
-        </ul>
-      </div>
-    </div>
-
-  </footer>
-
-</body>
-</html>

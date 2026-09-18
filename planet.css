@@ -356,14 +356,27 @@ a { color: var(--accent); }
 /* ==========================================================
    FOOTER
    ========================================================== */
-.site-footer {
+.site-bawah {
   position: relative;
   z-index: 1;
-  text-align: center;
-  padding: 2rem 1rem 3rem;
+  border-top: 1px solid var(--line);
+  padding: 2rem clamp(1.25rem, 5vw, 3rem) 2.5rem;
   color: var(--ink-dim);
-  font-size: 0.85rem;
+  font-size: 0.88rem;
 }
+
+.site-bawah__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin: 0 0 0.75rem;
+}
+
+.site-bawah__nav a { text-decoration: none; color: var(--ink); }
+.site-bawah__nav a:hover { color: var(--accent); }
+.site-bawah__nav a[aria-current="page"] { color: var(--accent); }
+
+.site-bawah__sumber { margin: 0; max-width: 70ch; }
 
 /* ==========================================================
    RESPONSIVE
@@ -389,3 +402,89 @@ a { color: var(--accent); }
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; }
 }
+
+
+/* ---------- HEADER BERANDA ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(16, 23, 53, 0.88);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #2A3568;
+}
+
+.site-header__isi {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 66px;
+  flex-wrap: wrap;
+  width: min(100% - 2.5rem, 1120px);
+  margin-inline: auto;
+}
+
+.site-merek {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.05rem;
+  color: #EDF1FF;
+  text-decoration: none;
+}
+
+.site-nav { display: flex; gap: 0.35rem; }
+
+.site-nav__tautan {
+  color: #9FA8D0;
+  text-decoration: none;
+  font-size: 0.93rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+}
+.site-nav__tautan:hover { color: #EDF1FF; background: rgba(111, 201, 224, 0.10); }
+
+.site-nav__tautan.is-aktif {
+  color: #D9A441;
+  background: rgba(217, 164, 65, 0.12);
+}
+
+.site-nav__tombol {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: 1px solid #2A3568;
+  color: #EDF1FF;
+  font-family: 'Archivo', "Segoe UI", system-ui, sans-serif;
+  font-size: 0.9rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.site-nav__garis,
+.site-nav__garis::before,
+.site-nav__garis::after {
+  display: block;
+  width: 16px;
+  height: 1.5px;
+  background: currentColor;
+  content: "";
+}
+.site-nav__garis { position: relative; }
+.site-nav__garis::before { position: absolute; top: -5px; }
+.site-nav__garis::after  { position: absolute; top: 5px; }
+
+@media (max-width: 720px) {
+  .site-nav__tombol { display: inline-flex; }
+  .site-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    padding-bottom: 0.75rem;
+  }
+  .site-nav.is-buka { display: flex; }
+}
+

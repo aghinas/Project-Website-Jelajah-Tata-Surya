@@ -1,0 +1,430 @@
+/* ==========================================================
+   fenomena.css — HANYA UNTUK fenomena.html (Halaman 3)
+   Token dan font disamakan dengan planet.css (Halaman 2)
+   supaya tampilannya satu keluarga. File ini berdiri sendiri,
+   jadi tidak ada baris di halaman 1 dan 2 yang terpengaruh.
+   ========================================================== */
+
+/* ==========================================================
+   TOKENS
+   ========================================================== */
+:root {
+  --bg-deep: #0a0c1a;
+  --bg-deep-2: #12142b;
+  --ink: #eef0fb;
+  --ink-dim: #a9adc9;
+  --line: rgba(255,255,255,0.10);
+  --card-bg: rgba(255,255,255,0.03);
+  --accent: #E3C16F;
+  --accent-cool: #6FC9E0;
+  --warn: #E8785A;
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Space Grotesk', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(ellipse 120% 80% at 50% -10%, var(--bg-deep-2), var(--bg-deep) 60%);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: var(--accent); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ==========================================================
+   STARFIELD
+   ========================================================== */
+.starfield {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1.5px 1.5px at 12% 18%, #ffffff 100%, transparent),
+    radial-gradient(1px 1px at 33% 72%, #ffffff 100%, transparent),
+    radial-gradient(1.5px 1.5px at 57% 12%, #ffffff 100%, transparent),
+    radial-gradient(1px 1px at 78% 63%, #ffffff 100%, transparent),
+    radial-gradient(1.5px 1.5px at 47% 42%, #ffffff 100%, transparent),
+    radial-gradient(1px 1px at 88% 88%, #ffffff 100%, transparent),
+    radial-gradient(1.5px 1.5px at 22% 92%, #ffffff 100%, transparent),
+    radial-gradient(1px 1px at 68% 33%, #ffffff 100%, transparent);
+  background-size: 100% 100%;
+  opacity: 0.5;
+}
+
+/* ==========================================================
+   NAV
+   ========================================================== */
+.topnav {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1.25rem clamp(1.25rem, 5vw, 3rem);
+  border-bottom: 1px solid var(--line);
+  font-size: 0.9rem;
+}
+
+.topnav__link {
+  text-decoration: none;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.topnav__link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.topnav__page { color: var(--ink-dim); }
+
+/* ==========================================================
+   HERO
+   ========================================================== */
+.hero {
+  position: relative;
+  z-index: 1;
+  padding: clamp(3rem, 8vw, 6rem) clamp(1.25rem, 5vw, 3rem) 2rem;
+  max-width: 900px;
+}
+
+.hero__eyebrow {
+  font-size: 0.95rem;
+  color: var(--ink-dim);
+  margin: 0 0 0.75rem;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+  line-height: 1.1;
+  margin: 0 0 1.25rem;
+  max-width: 14ch;
+}
+
+.hero__subtitle {
+  font-size: 1.05rem;
+  color: var(--ink-dim);
+  max-width: 62ch;
+  margin: 0;
+}
+
+/* Daftar isi berbentuk pil */
+.chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 2.25rem 0 0;
+  padding: 0;
+}
+
+.chip {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--ink-dim);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.4rem 0.95rem;
+  font-size: 0.88rem;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.chip:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ==========================================================
+   KARTU FENOMENA
+   ========================================================== */
+.fenomena {
+  position: relative;
+  z-index: 1;
+  padding: 1rem clamp(1.25rem, 5vw, 3rem) 3rem;
+  display: grid;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  max-width: 1120px;
+}
+
+.fen-card {
+  display: grid;
+  grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 2.75rem);
+  align-items: start;
+  padding-top: clamp(1.5rem, 4vw, 2.5rem);
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 1.5rem;
+}
+
+.fen-card__visual {
+  position: sticky;
+  top: 1.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1rem;
+}
+
+.fen-card__visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.fen-card__content { min-width: 0; }
+
+.fen-card__index {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin: 0 0 0.35rem;
+}
+
+.fen-card__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.6rem, 3.6vw, 2.35rem);
+  line-height: 1.15;
+  margin: 0 0 0.35rem;
+}
+
+.fen-card__tagline {
+  color: var(--ink-dim);
+  font-size: 1rem;
+  margin: 0 0 1.35rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.fen-card__lead {
+  max-width: 68ch;
+  margin: 0 0 1.25rem;
+}
+
+.fen-card__subhead {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--accent);
+  margin: 1.75rem 0 0.75rem;
+}
+
+.fen-card__facts {
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  max-width: 68ch;
+}
+
+.fen-card__facts li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.65rem;
+}
+
+.fen-card__facts li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.8;
+}
+
+.fen-card__facts strong { color: var(--ink); font-weight: 600; }
+
+/* Daftar data dua kolom */
+.fen-card__data {
+  margin: 0 0 1.5rem;
+  max-width: 54ch;
+}
+
+.fen-card__data > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.25rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed var(--line);
+}
+.fen-card__data > div:last-child { border-bottom: 0; }
+
+.fen-card__data dt {
+  color: var(--ink-dim);
+  font-size: 0.9rem;
+}
+
+.fen-card__data dd {
+  margin: 0;
+  text-align: right;
+  color: var(--ink);
+  font-size: 0.93rem;
+}
+
+/* Peringatan keselamatan */
+.fen-card__warning {
+  border-left: 3px solid var(--warn);
+  background: rgba(232, 120, 90, 0.08);
+  border-radius: 0 10px 10px 0;
+  padding: 0.85rem 1.1rem;
+  margin: 0 0 1.5rem;
+  font-size: 0.93rem;
+  max-width: 64ch;
+}
+
+/* Kotak fun fact */
+.fen-card__funfact {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 14px 14px 0;
+  padding: 1.1rem 1.35rem;
+  max-width: 68ch;
+}
+
+.fen-card__funfact-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.fen-card__funfact p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--ink-dim);
+}
+
+/* ==========================================================
+   RINGKASAN / TABEL
+   ========================================================== */
+.ringkas {
+  border-top: 1px solid var(--line);
+  padding-top: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.ringkas__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 3.2vw, 2rem);
+  margin: 0 0 0.5rem;
+}
+
+.ringkas__lead {
+  color: var(--ink-dim);
+  max-width: 60ch;
+  margin: 0 0 1.5rem;
+}
+
+.ringkas__scroll { overflow-x: auto; }
+
+.ringkas__table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 0.93rem;
+}
+
+.ringkas__table th,
+.ringkas__table td {
+  text-align: left;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.ringkas__table thead th {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--accent);
+  border-bottom-color: rgba(227,193,111,0.4);
+}
+
+.ringkas__table tbody th {
+  font-weight: 500;
+  color: var(--ink-dim);
+  width: 26%;
+}
+
+.ringkas__table tbody tr:last-child th,
+.ringkas__table tbody tr:last-child td { border-bottom: 0; }
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+.site-bawah {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--line);
+  padding: 2rem clamp(1.25rem, 5vw, 3rem) 2.5rem;
+  color: var(--ink-dim);
+  font-size: 0.88rem;
+}
+
+.site-bawah__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin: 0 0 0.75rem;
+}
+
+.site-bawah__nav a { text-decoration: none; color: var(--ink); }
+.site-bawah__nav a:hover { color: var(--accent); }
+.site-bawah__nav a[aria-current="page"] { color: var(--accent); }
+
+.site-bawah__sumber { margin: 0; max-width: 70ch; }
+
+/* ==========================================================
+   RESPONSIF
+   ========================================================== */
+@media (max-width: 880px) {
+  .fen-card { grid-template-columns: 1fr; }
+  .fen-card__visual {
+    position: static;
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 520px) {
+  .fen-card__data > div {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .fen-card__data dd { text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition-duration: 0.01ms !important; }
+}

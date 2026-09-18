@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tata Surya - Perjalanan dari Matahari</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="planet.css">
+</head>
+<body>
+
+<!-- Bintang-bintang latar belakang -->
+<div class="starfield" aria-hidden="true"></div>
+
+<nav class="topnav">
+  <a href="index.html" class="topnav__link">&larr; Kembali ke Halaman 1</a>
+  <span class="topnav__page">Halaman 2 / Tata Surya</span>
+</nav>
+
+<header class="hero">
+  <p class="hero__eyebrow">Rumah kita di alam semesta</p>
+  <h1 class="hero__title">Sembilan Persinggahan<br>dari Matahari</h1>
+  <p class="hero__subtitle">
+    Setiap planet mengorbit dalam jarak yang berbeda, membentuk urutan yang telah
+    tetap sama selama miliaran tahun. Urutkan langkah demi langkah, dari yang
+    paling dekat dengan panasnya Matahari hingga yang paling jauh dan sunyi.
+  </p>
+
+  <!-- Diagram urutan orbit -->
+  <div class="orbit-map" role="img" aria-label="Urutan jarak planet dari Matahari">
+    <div class="orbit-map__line"></div>
+    <div class="orbit-map__dot orbit-map__dot--sun" style="--c:#FDB813"><span>Matahari</span></div>
+    <div class="orbit-map__dot" style="--c:#9C9C9C"><span>Merkurius</span></div>
+    <div class="orbit-map__dot" style="--c:#E8CDA2"><span>Venus</span></div>
+    <div class="orbit-map__dot" style="--c:#3AA6FF"><span>Bumi</span></div>
+    <div class="orbit-map__dot" style="--c:#C1440E"><span>Mars</span></div>
+    <div class="orbit-map__dot" style="--c:#D8A47F"><span>Jupiter</span></div>
+    <div class="orbit-map__dot" style="--c:#E3C16F"><span>Saturnus</span></div>
+    <div class="orbit-map__dot" style="--c:#9FE8E0"><span>Uranus</span></div>
+    <div class="orbit-map__dot" style="--c:#3457D5"><span>Neptunus</span></div>
+  </div>
+</header>
+
+<main class="planets">
+
+  <!-- 0. MATAHARI -->
+  <section class="planet-card" id="matahari">
+    <div class="planet-card__visual">
+      <div class="sphere sphere--sun"></div>
+    </div>
+    <div class="planet-card__content">
+      <p class="planet-card__index">Pusat 00</p>
+      <h2 class="planet-card__name">Matahari</h2>
+      <p class="planet-card__tagline">Bintang yang menyalakan seluruh tata surya</p>
+      <ul class="planet-card__facts">
+        <li><strong>Diameter:</strong> ± 1.392.000 km (109x Bumi)</li>
+        <li><strong>Suhu permukaan:</strong> ± 5.500°C</li>
+        <li><strong>Komposisi:</strong> 73% hidrogen, 25% helium</li>
+        <li><strong>Peran:</strong> Sumber cahaya, panas, dan gravitasi yang mengikat seluruh planet</li>
+      </ul>
+      <div class="planet-card__funfact">
+        <span class="planet-card__funfact-label">Fun Fact</span>
+        <p>Matahari begitu besar hingga bisa menampung lebih dari 1 juta planet seukuran Bumi di dalamnya. Meski begitu, cahayanya baru sampai ke Bumi setelah menempuh perjalanan sekitar 8 menit 20 detik.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. MERKURIUS -->
+  <section class="planet-card" id="merkurius">
+    <div class="planet-card__visual">
+      <div class="sphere sphere--merkurius"></div>
+    </div>
+    <div class="planet-card__content">
+      <p class="planet-card__index">Urutan 01</p>
+      <h2 class="planet-card__name">Merkurius</h2>
+      <p class="planet-card__tagline">Si kecil yang paling dekat dan paling gesit</p>
+      <ul class="planet-card__facts">
+        <li><strong>Jarak dari Matahari:</strong> ± 57,9 juta km</li>
+        <li><strong>Diameter:</strong> 4.879 km (terkecil di tata surya)</li>
+        <li><strong>Satu tahun:</strong> 88 hari Bumi</li>
+        <li><strong>Satelit:</strong> Tidak ada</li>
+        <li><strong>Permukaan:</strong> Berbatu dan penuh kawah, tanpa atmosfer tebal untuk menahan panas</li>
+      </ul>
+      <div class="planet-card__funfact">
+        <span class="planet-card__funfact-label">Fun Fact</span>
+        <p>Satu hari penuh di Merkurius (dari terbit matahari hingga terbit lagi) berlangsung selama 176 hari Bumi — lebih lama daripada satu tahunnya sendiri!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. VENUS -->
+  <section class="planet-card" id="venus">
+    <div class="planet-card__visual">
+      <div class="sphere sphere--venus"></div>
+    </div>
+    <div class="planet-card__content">
+      <p class="planet-card__index">Urutan 02</p>
+      <h2 class="planet-card__name">Venus</h2>
+      <p class="planet-card__tagline">Planet terpanas, terbungkus awan asam</p>
+      <ul class="planet-card__facts">
+        <li><strong>Jarak dari Matahari:</strong> ± 108,2 juta km</li>
+        <li><strong>Diameter:</strong> 12.104 km (mirip ukuran Bumi)</li>
+        <li><strong>Satu tahun:</strong> 225 hari Bumi</li>
+        <li><strong>Suhu permukaan:</strong> ± 465°C akibat efek rumah kaca ekstrem</li>
+        <li><strong>Rotasi:</strong> Berputar terbalik (retrograde) dan sangat lambat</li>
+      </ul>
+      <div class="planet-card__funfact">
+        <span class="planet-card__funfact-label">Fun Fact</span>
+        <p>Karena arah rotasinya terbalik, jika kamu berdiri di Venus, matahari akan terbit dari barat dan terbenam di timur. Satu harinya juga lebih panjang dari satu tahunnya.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. BUMI -->
+  <section class="planet-card" id="bumi">
+    <div class="planet-card__visual">
+      <div class="sphere sphere--bumi"></div>
+    </div>
+    <div class="planet-card__content">
+      <p class="planet-card__index">Urutan 03</p>
+      <h2 class="planet-card__name">Bumi</h2>
+      <p class="planet-card__tagline">Satu-satunya rumah yang kita kenal</p>
+      <ul class="planet-card__facts">
+        <li><strong>Jarak dari Matahari:</strong> ± 149,6 juta km (1 SA / Satuan Astronomi)</li>
+        <li><strong>Diameter:</strong> 12.742 km</li>
+        <li><strong>Satu tahun:</strong> 365,25 hari</li>
+        <li><strong>Permukaan:</strong> 71% tertutup air, beratmosfer kaya oksigen</li>
+        <li><strong>Satelit:</strong> 1 (Bulan)</li>
+      </ul>
+      <div class="planet-card__funfact">
+        <span class="planet-card__funfact-label">Fun Fact</span>
+        <p>Bumi tidak benar-benar bulat sempurna — bentuknya sedikit pepat di kutub dan menggembung di ekuator karena efek rotasinya. Medan magnetnya juga melindungi kita dari radiasi berbahaya Matahari.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. MARS -->
+  <section class="planet-card" id="mars">
+    <div class="planet-card__visual">
+      <div class="sphere sphere--mars"></div>
+    </div>
+    <div class="planet-card__content">
+      <p class="planet-card__index">Urutan 04</p>
+      <h2 class="planet-card__name">Mars</h2>
+      <p class="planet-card__tagline">Si Planet Merah dengan gunung raksasa</p>
+      <ul class="planet-card__facts">
+        <li><strong>Jarak dari Matahari:</strong> ± 227,9 juta km</li>
+        <li><strong>Diameter:</strong> 6.779 km</li>
+        <li><strong>Satu tahun:</strong> 687 hari Bumi</li>
+        <li><strong>Warna khas:</strong> Merah karena permukaannya kaya oksida besi (karat)</li>
+        <li><strong>Satelit:</strong> 2 (Phobos dan Deimos)</li>
+      </ul>
+      <div class="planet-card__funfact">
+        <span class="planet-card__funfact-label">Fun Fact</span>
+        <p>Mars punya Olympus Mons, gunung berapi tertinggi di tata surya — ketinggiannya hampir 3 kali Gunung Everest. Mars juga memiliki ngarai raksasa, Valles Marineris, yang panjangnya melebihi lebar Amerika Serikat.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. JUPITER -->
+  <section class="planet-card" id="jupiter">
+    <div class="planet-card__visual">
+      <div class="sphere sphere--jupiter"></div>
+    </div>
+    <div class="planet-card__content">
+      <p class="planet-card__index">Urutan 05</p>
+      <h2 class="planet-card__name">Jupiter</h2>
+      <p class="planet-card__tagline">Raksasa gas dengan badai abadi</p>
+      <ul class="planet-card__facts">
+        <li><strong>Jarak dari Matahari:</strong> ± 778,5 juta km</li>
+        <li><strong>Diameter:</strong> 139.820 km (planet terbesar)</li>
+        <li><strong>Satu tahun:</strong> ± 12 tahun Bumi</li>
+        <li><strong>Rotasi:</strong> Sangat cepat, hanya sekitar 10 jam per hari</li>
+        <li><strong>Satelit:</strong> Lebih dari 95, termasuk 4 bulan besar Galileo</li>
+      </ul>
+      <div class="planet-card__funfact">
+        <span class="planet-card__funfact-label">Fun Fact</span>
+        <p>Bintik Merah Besar (Great Red Spot) di Jupiter adalah badai raksasa yang sudah berlangsung selama ratusan tahun dan ukurannya lebih besar dari Bumi. Gravitasi Jupiter juga membantu "menyapu" komet dan asteroid yang mengancam planet dalam.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. SATURNUS -->
+  <section class="planet-card" id="saturnus">
+    <div class="planet-card__visual">
+      <div class="sphere-wrap">
+        <div class="sphere sphere--saturnus"></div>
+        <div class="ring"></div>
+      </div>
+    </div>
+    <div class="planet-card__content">
+      <p class="planet-card__index">Urutan 06</p>
+      <h2 class="planet-card__name">Saturnus</h2>
+      <p class="planet-card__tagline">Terkenal karena cincin megahnya</p>
+      <ul class="planet-card__facts">
+        <li><strong>Jarak dari Matahari:</strong> ± 1,43 miliar km</li>
+        <li><strong>Diameter:</strong> 116.460 km</li>
+        <li><strong>Satu tahun:</strong> ± 29,5 tahun Bumi</li>
+        <li><strong>Densitas:</strong> Sangat rendah, secara teori bisa mengapung di air (jika ada lautan yang cukup besar)</li>
+        <li><strong>Satelit:</strong> Lebih dari 140, termasuk Titan yang beratmosfer tebal</li>
+      </ul>
+      <div class="planet-card__funfact">
+        <span class="planet-card__funfact-label">Fun Fact</span>
+        <p>Cincin Saturnus tersusun dari es dan batu, terbentang ratusan ribu kilometer lebarnya, tapi tebalnya hanya sekitar puluhan meter — proporsinya seperti selembar kertas yang sangat lebar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. URANUS -->
+  <section class="planet-card" id="uranus">
+    <div class="planet-card__visual">
+      <div class="sphere sphere--uranus"></div>
+    </div>
+    <div class="planet-card__content">
+      <p class="planet-card__index">Urutan 07</p>
+      <h2 class="planet-card__name">Uranus</h2>
+      <p class="planet-card__tagline">Planet es yang berputar sambil "menggelinding"</p>
+      <ul class="planet-card__facts">
+        <li><strong>Jarak dari Matahari:</strong> ± 2,87 miliar km</li>
+        <li><strong>Diameter:</strong> 50.724 km</li>
+        <li><strong>Satu tahun:</strong> ± 84 tahun Bumi</li>
+        <li><strong>Kemiringan sumbu:</strong> Ekstrem, sekitar 98 derajat</li>
+        <li><strong>Warna khas:</strong> Biru-hijau pucat karena kandungan gas metana</li>
+      </ul>
+      <div class="planet-card__funfact">
+        <span class="planet-card__funfact-label">Fun Fact</span>
+        <p>Karena kemiringan sumbunya yang ekstrem, satu kutub Uranus bisa mengalami "siang" terus-menerus selama 21 tahun, sementara kutub lainnya gelap total selama periode yang sama.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. NEPTUNUS -->
+  <section class="planet-card" id="neptunus">
+    <div class="planet-card__visual">
+      <div class="sphere sphere--neptunus"></div>
+    </div>
+    <div class="planet-card__content">
+      <p class="planet-card__index">Urutan 08</p>
+      <h2 class="planet-card__name">Neptunus</h2>
+      <p class="planet-card__tagline">Ujung tata surya yang berangin kencang</p>
+      <ul class="planet-card__facts">
+        <li><strong>Jarak dari Matahari:</strong> ± 4,5 miliar km</li>
+        <li><strong>Diameter:</strong> 49.244 km</li>
+        <li><strong>Satu tahun:</strong> ± 165 tahun Bumi</li>
+        <li><strong>Angin:</strong> Angin tercepat di tata surya, bisa melebihi 2.000 km/jam</li>
+        <li><strong>Warna khas:</strong> Biru tua pekat karena gas metana</li>
+      </ul>
+      <div class="planet-card__funfact">
+        <span class="planet-card__funfact-label">Fun Fact</span>
+        <p>Neptunus ditemukan pada tahun 1846 lewat perhitungan matematika sebelum benar-benar diamati lewat teleskop. Sejak ditemukan, Neptunus baru menyelesaikan satu putaran penuh mengelilingi Matahari pada tahun 2011.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>Dibuat untuk halaman kedua proyek website tata surya.</p>
+</footer>
+
+</body>
+</html>

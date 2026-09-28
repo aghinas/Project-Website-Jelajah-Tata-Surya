@@ -1,338 +1,389 @@
 <!DOCTYPE html>
-
 <html lang="id">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Fenomena Tata Surya</title>
-<meta content="Penjelasan sederhana lima fenomena tata surya: gerhana matahari, gerhana bulan, hujan meteor, Bintik Merah Besar Jupiter, dan Olympus Mons di Mars." name="description"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&amp;family=Fraunces:opsz,wght@9..144,400;9..144,600&amp;display=swap" rel="stylesheet"/>
-<link href="fenomena.css" rel="stylesheet"/><script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        fontFamily: {
-          sans: ['Archivo', 'ui-sans-serif', 'system-ui'],
-          display: ['Fraunces', 'ui-serif', 'serif']
-        },
-        colors: {
-          space: '#0b1020',
-          accent: '#e3c16f'
-        }
-      }
-    }
-  }
-</script>
-<script src="https://cdn.tailwindcss.com"></script>
+<meta name="description" content="Penjelasan sederhana lima fenomena tata surya: gerhana matahari, gerhana bulan, hujan meteor, Bintik Merah Besar Jupiter, dan Olympus Mons di Mars.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="fenomena.css">
 </head>
-<body class="min-h-screen bg-slate-950 text-slate-100 antialiased"><!-- Tailwind CSS enabled: utility classes are used for layout, responsive behavior, components, and spacing. -->
-<div aria-hidden="true" class="starfield"></div>
-<nav class="topnav mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-4 md:px-6">
-<a class="topnav__link rounded-full border border-white/10 px-4 py-2 text-sm transition hover:border-amber-300 hover:text-amber-300" href="index.html">Beranda</a>
-<a class="topnav__link rounded-full border border-white/10 px-4 py-2 text-sm transition hover:border-amber-300 hover:text-amber-300" href="planet.html">Planet</a>
-<a class="topnav__link topnav__link--active rounded-full border border-white/10 px-4 py-2 text-sm transition hover:border-amber-300 hover:text-amber-300" href="fenomena.html">Fenomena Tata Surya</a>
-</nav>
-<header class="hero mx-auto w-full max-w-6xl px-4 py-12 md:px-6 md:py-20">
-<p class="hero__eyebrow">Peristiwa yang bisa diamati dan dijelaskan</p>
-<h1 class="hero__title font-display text-4xl font-semibold leading-tight md:text-6xl">Lima Fenomena<br/>Tata Surya</h1>
-<p class="hero__subtitle mt-5 max-w-3xl leading-7 text-slate-300">
+<body>
+
+<div class="starfield" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md">
+      <div class="wrap site-header__isi container-fluid">
+        <a class="navbar-brand site-merek" href="index.html">
+          <img src="assets/logo.svg" alt="" width="34" height="34">
+          <span>Jelajah Tata Surya</span>
+        </a>
+
+        <button class="navbar-toggler site-nav__tombol" type="button" data-bs-toggle="collapse" data-bs-target="#menu-utama" aria-controls="menu-utama" aria-expanded="false" aria-label="Buka navigasi">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="menu-utama" class="collapse navbar-collapse site-nav">
+          <nav class="navbar-nav ms-auto" aria-label="Navigasi utama">
+            <a href="index.html" class="nav-link site-nav__tautan">Beranda</a>
+            <a href="planet.html" class="nav-link site-nav__tautan">Planet</a>
+            <a href="fenomena.html" class="nav-link site-nav__tautan is-aktif">Fenomena Tata Surya</a>
+          </nav>
+        </div>
+      </div>
+    </nav>
+  </header>
+<header class="hero">
+  <p class="hero__eyebrow">Peristiwa yang bisa diamati dan dijelaskan</p>
+  <h1 class="hero__title">Lima Fenomena<br>Tata Surya</h1>
+  <p class="hero__subtitle">
     Tata surya bukan susunan benda yang diam. Bulan sesekali menutupi Matahari,
     Bumi menjatuhkan bayangannya ke Bulan, sisa debu komet terbakar di langit malam,
     dan badai raksasa berputar di Jupiter selama ratusan tahun. Berikut penjelasan
     sederhana tentang lima peristiwa paling menarik beserta angka-angkanya.
   </p>
-<ul aria-label="Daftar isi halaman" class="chips mt-8 grid grid-cols-2 gap-2 md:flex md:flex-wrap">
-<li><a class="chip rounded-full border border-white/10 px-4 py-2 text-center text-sm transition hover:border-amber-300 hover:text-amber-300" href="#gerhana-matahari">Gerhana Matahari</a></li>
-<li><a class="chip rounded-full border border-white/10 px-4 py-2 text-center text-sm transition hover:border-amber-300 hover:text-amber-300" href="#gerhana-bulan">Gerhana Bulan</a></li>
-<li><a class="chip rounded-full border border-white/10 px-4 py-2 text-center text-sm transition hover:border-amber-300 hover:text-amber-300" href="#hujan-meteor">Hujan Meteor</a></li>
-<li><a class="chip rounded-full border border-white/10 px-4 py-2 text-center text-sm transition hover:border-amber-300 hover:text-amber-300" href="#bintik-merah">Bintik Merah Besar</a></li>
-<li><a class="chip rounded-full border border-white/10 px-4 py-2 text-center text-sm transition hover:border-amber-300 hover:text-amber-300" href="#olympus-mons">Olympus Mons</a></li>
-</ul>
+
+  <ul class="chips" aria-label="Daftar isi halaman">
+    <li><a class="chip" href="#gerhana-matahari">Gerhana Matahari</a></li>
+    <li><a class="chip" href="#gerhana-bulan">Gerhana Bulan</a></li>
+    <li><a class="chip" href="#hujan-meteor">Hujan Meteor</a></li>
+    <li><a class="chip" href="#bintik-merah">Bintik Merah Besar</a></li>
+    <li><a class="chip" href="#olympus-mons">Olympus Mons</a></li>
+  </ul>
 </header>
-<main class="fenomena mx-auto grid w-full max-w-6xl gap-10 px-4 py-8 md:px-6">
-<!-- ============ 1. GERHANA MATAHARI ============ -->
-<section class="fen-card grid gap-6 border-t border-white/10 pt-8 md:grid-cols-[320px_minmax(0,1fr)]" id="gerhana-matahari">
-<div class="fen-card__visual rounded-2xl border border-white/10 p-4 md:sticky md:top-6">
-<img alt="Bulan menutupi piringan Matahari sehingga korona terlihat" decoding="async" height="240" loading="lazy" src="assets/fenomena/gerhana-matahari.svg" width="320"/>
-</div>
-<div class="fen-card__content">
-<p class="fen-card__index">Fenomena 01</p>
-<h2 class="fen-card__name">Gerhana Matahari</h2>
-<p class="fen-card__tagline">Bulan lewat tepat di depan Matahari</p>
-<p class="fen-card__lead">
+
+<main class="fenomena">
+
+  <!-- ============ 1. GERHANA MATAHARI ============ -->
+  <section class="fen-card" id="gerhana-matahari">
+    <div class="fen-card__visual">
+      <img src="assets/fenomena/gerhana-matahari.svg" alt="Bulan menutupi piringan Matahari sehingga korona terlihat" width="320" height="240" loading="lazy" decoding="async">
+    </div>
+    <div class="fen-card__content">
+      <p class="fen-card__index">Fenomena 01</p>
+      <h2 class="fen-card__name">Gerhana Matahari</h2>
+      <p class="fen-card__tagline">Bulan lewat tepat di depan Matahari</p>
+
+      <p class="fen-card__lead">
         Gerhana matahari terjadi ketika Bulan berada persis di antara Matahari dan Bumi,
         sehingga bayangannya jatuh ke permukaan Bumi. Peristiwa ini hanya mungkin saat
         fase bulan baru. Daerah yang tertutup bayangan inti atau umbra akan melihat
         gerhana total, sedangkan daerah di sekitarnya yang hanya terkena bayangan
         tambahan atau penumbra melihat gerhana sebagian.
       </p>
-<h3 class="fen-card__subhead">Jenis gerhana matahari</h3>
-<ul class="fen-card__facts space-y-2">
-<li><strong>Total:</strong> piringan Matahari tertutup penuh dan korona terlihat sebagai mahkota cahaya</li>
-<li><strong>Sebagian:</strong> hanya sebagian piringan yang tertutup, langit tetap terang</li>
-<li><strong>Cincin:</strong> Bulan sedang berada di titik terjauh sehingga tampak lebih kecil dan menyisakan lingkaran cahaya</li>
-<li><strong>Hibrida:</strong> tampak total di sebagian jalur dan berbentuk cincin di bagian jalur lainnya</li>
-</ul>
-<h3 class="fen-card__subhead">Angka penting</h3>
-<dl class="fen-card__data">
-<div><dt>Fase Bulan</dt><dd>Bulan baru</dd></div>
-<div><dt>Durasi totalitas</dt><dd>umumnya di bawah 7,5 menit</dd></div>
-<div><dt>Lebar jalur totalitas</dt><dd>ratusan kilometer</dd></div>
-<div><dt>Cara aman mengamati</dt><dd>kacamata gerhana berstandar khusus</dd></div>
-</dl>
-<p class="fen-card__warning rounded-r-xl border-l-4 border-orange-400 bg-orange-400/10 p-4">
+
+      <h3 class="fen-card__subhead">Jenis gerhana matahari</h3>
+      <ul class="fen-card__facts">
+        <li><strong>Total:</strong> piringan Matahari tertutup penuh dan korona terlihat sebagai mahkota cahaya</li>
+        <li><strong>Sebagian:</strong> hanya sebagian piringan yang tertutup, langit tetap terang</li>
+        <li><strong>Cincin:</strong> Bulan sedang berada di titik terjauh sehingga tampak lebih kecil dan menyisakan lingkaran cahaya</li>
+        <li><strong>Hibrida:</strong> tampak total di sebagian jalur dan berbentuk cincin di bagian jalur lainnya</li>
+      </ul>
+
+      <h3 class="fen-card__subhead">Angka penting</h3>
+      <dl class="fen-card__data">
+        <div><dt>Fase Bulan</dt><dd>Bulan baru</dd></div>
+        <div><dt>Durasi totalitas</dt><dd>umumnya di bawah 7,5 menit</dd></div>
+        <div><dt>Lebar jalur totalitas</dt><dd>ratusan kilometer</dd></div>
+        <div><dt>Cara aman mengamati</dt><dd>kacamata gerhana berstandar khusus</dd></div>
+      </dl>
+
+      <p class="fen-card__warning">
         Jangan pernah menatap Matahari secara langsung, termasuk saat fase sebagian,
         tanpa filter khusus. Kacamata hitam biasa tidak cukup dan retina bisa rusak
         permanen tanpa rasa sakit sebagai peringatan.
       </p>
-<div class="fen-card__funfact rounded-r-xl border border-white/10 border-l-4 border-amber-300 p-4">
-<span class="fen-card__funfact-label">Fun Fact</span>
-<p>
+
+      <div class="fen-card__funfact">
+        <span class="fen-card__funfact-label">Fun Fact</span>
+        <p>
           Gerhana matahari total bisa terjadi karena sebuah kebetulan yang nyaris ajaib.
           Diameter Matahari sekitar 400 kali lebih besar daripada Bulan, tetapi jaraknya
           juga sekitar 400 kali lebih jauh. Hasilnya, keduanya tampak nyaris sama besar
           dari Bumi sehingga Bulan bisa menutupi Matahari dengan pas.
         </p>
-</div>
-</div>
-</section>
-<!-- ============ 2. GERHANA BULAN ============ -->
-<section class="fen-card grid gap-6 border-t border-white/10 pt-8 md:grid-cols-[320px_minmax(0,1fr)]" id="gerhana-bulan">
-<div class="fen-card__visual rounded-2xl border border-white/10 p-4 md:sticky md:top-6">
-<img alt="Bumi menjatuhkan bayangan ke Bulan sehingga Bulan tampak kemerahan" decoding="async" height="240" loading="lazy" src="assets/fenomena/gerhana-bulan.svg" width="320"/>
-</div>
-<div class="fen-card__content">
-<p class="fen-card__index">Fenomena 02</p>
-<h2 class="fen-card__name">Gerhana Bulan</h2>
-<p class="fen-card__tagline">Bulan masuk ke dalam bayangan Bumi</p>
-<p class="fen-card__lead">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2. GERHANA BULAN ============ -->
+  <section class="fen-card" id="gerhana-bulan">
+    <div class="fen-card__visual">
+      <img src="assets/fenomena/gerhana-bulan.svg" alt="Bumi menjatuhkan bayangan ke Bulan sehingga Bulan tampak kemerahan" width="320" height="240" loading="lazy" decoding="async">
+    </div>
+    <div class="fen-card__content">
+      <p class="fen-card__index">Fenomena 02</p>
+      <h2 class="fen-card__name">Gerhana Bulan</h2>
+      <p class="fen-card__tagline">Bulan masuk ke dalam bayangan Bumi</p>
+
+      <p class="fen-card__lead">
         Urutannya kebalikan dari gerhana matahari. Kali ini Bumi yang berada di tengah,
         sehingga bayangannya menutupi Bulan. Karena itu gerhana bulan hanya terjadi saat
         fase purnama. Bedanya dengan gerhana matahari, gerhana bulan bisa dilihat dari
         seluruh belahan Bumi yang sedang mengalami malam, jadi jauh lebih banyak orang
         berkesempatan menyaksikannya.
       </p>
-<h3 class="fen-card__subhead">Jenis gerhana bulan</h3>
-<ul class="fen-card__facts space-y-2">
-<li><strong>Total:</strong> seluruh Bulan masuk ke umbra dan berubah warna menjadi kemerahan</li>
-<li><strong>Sebagian:</strong> hanya sebagian piringan Bulan yang tertutup umbra</li>
-<li><strong>Penumbra:</strong> Bulan hanya melewati bayangan tambahan sehingga cahayanya sekadar meredup dan sering luput dari perhatian</li>
-</ul>
-<h3 class="fen-card__subhead">Kenapa warnanya merah</h3>
-<p class="fen-card__lead">
+
+      <h3 class="fen-card__subhead">Jenis gerhana bulan</h3>
+      <ul class="fen-card__facts">
+        <li><strong>Total:</strong> seluruh Bulan masuk ke umbra dan berubah warna menjadi kemerahan</li>
+        <li><strong>Sebagian:</strong> hanya sebagian piringan Bulan yang tertutup umbra</li>
+        <li><strong>Penumbra:</strong> Bulan hanya melewati bayangan tambahan sehingga cahayanya sekadar meredup dan sering luput dari perhatian</li>
+      </ul>
+
+      <h3 class="fen-card__subhead">Kenapa warnanya merah</h3>
+      <p class="fen-card__lead">
         Saat gerhana total, Bulan tidak menjadi gelap gulita. Cahaya Matahari masih
         membelok lewat atmosfer Bumi sebelum mengenai Bulan. Atmosfer menghamburkan
         cahaya biru jauh lebih kuat daripada cahaya merah, sehingga yang tersisa dan
         diteruskan ke Bulan adalah warna kemerahan. Prosesnya sama persis dengan alasan
         langit tampak jingga saat matahari terbenam.
       </p>
-<dl class="fen-card__data">
-<div><dt>Fase Bulan</dt><dd>Purnama</dd></div>
-<div><dt>Durasi fase total</dt><dd>bisa lebih dari satu jam</dd></div>
-<div><dt>Wilayah pengamatan</dt><dd>seluruh sisi Bumi yang sedang malam</dd></div>
-<div><dt>Keamanan</dt><dd>aman dilihat dengan mata telanjang</dd></div>
-</dl>
-<div class="fen-card__funfact rounded-r-xl border border-white/10 border-l-4 border-amber-300 p-4">
-<span class="fen-card__funfact-label">Fun Fact</span>
-<p>
+
+      <dl class="fen-card__data">
+        <div><dt>Fase Bulan</dt><dd>Purnama</dd></div>
+        <div><dt>Durasi fase total</dt><dd>bisa lebih dari satu jam</dd></div>
+        <div><dt>Wilayah pengamatan</dt><dd>seluruh sisi Bumi yang sedang malam</dd></div>
+        <div><dt>Keamanan</dt><dd>aman dilihat dengan mata telanjang</dd></div>
+      </dl>
+
+      <div class="fen-card__funfact">
+        <span class="fen-card__funfact-label">Fun Fact</span>
+        <p>
           Kalau gerhana hanya soal posisi sejajar, harusnya ada gerhana setiap bulan.
           Kenyataannya tidak, karena bidang orbit Bulan miring sekitar lima derajat
           terhadap bidang orbit Bumi. Gerhana baru terjadi ketika Bulan kebetulan
           melintas di titik potong kedua bidang itu saat fasenya juga tepat.
         </p>
-</div>
-</div>
-</section>
-<!-- ============ 3. HUJAN METEOR ============ -->
-<section class="fen-card grid gap-6 border-t border-white/10 pt-8 md:grid-cols-[320px_minmax(0,1fr)]" id="hujan-meteor">
-<div class="fen-card__visual rounded-2xl border border-white/10 p-4 md:sticky md:top-6">
-<img alt="Jejak meteor yang seolah memancar dari satu titik radian di langit" decoding="async" height="240" loading="lazy" src="assets/fenomena/hujan-meteor.svg" width="320"/>
-</div>
-<div class="fen-card__content">
-<p class="fen-card__index">Fenomena 03</p>
-<h2 class="fen-card__name">Hujan Meteor</h2>
-<p class="fen-card__tagline">Bumi menembus jejak debu yang ditinggalkan komet</p>
-<p class="fen-card__lead">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. HUJAN METEOR ============ -->
+  <section class="fen-card" id="hujan-meteor">
+    <div class="fen-card__visual">
+      <img src="assets/fenomena/hujan-meteor.svg" alt="Jejak meteor yang seolah memancar dari satu titik radian di langit" width="320" height="240" loading="lazy" decoding="async">
+    </div>
+    <div class="fen-card__content">
+      <p class="fen-card__index">Fenomena 03</p>
+      <h2 class="fen-card__name">Hujan Meteor</h2>
+      <p class="fen-card__tagline">Bumi menembus jejak debu yang ditinggalkan komet</p>
+
+      <p class="fen-card__lead">
         Komet yang mendekati Matahari akan menguap dan meninggalkan jejak debu di
         sepanjang orbitnya. Setiap tahun Bumi melewati jejak yang sama pada tanggal yang
         kurang lebih tetap. Butiran debu itu masuk ke atmosfer dengan kecepatan sangat
         tinggi, bergesekan dengan udara, lalu terbakar dan menghasilkan garis cahaya
         yang kita sebut meteor.
       </p>
-<h3 class="fen-card__subhead">Istilah yang sering tertukar</h3>
-<ul class="fen-card__facts space-y-2">
-<li><strong>Meteoroid:</strong> butiran atau bongkahan materi saat masih melayang di ruang angkasa</li>
-<li><strong>Meteor:</strong> kilatan cahaya yang muncul ketika benda itu terbakar di atmosfer</li>
-<li><strong>Meteorit:</strong> sisa benda yang tidak habis terbakar dan sampai ke permukaan Bumi</li>
-<li><strong>Radian:</strong> titik di langit yang menjadi asal semua jejak meteor. Nama hujan meteor diambil dari rasi tempat titik ini berada</li>
-</ul>
-<h3 class="fen-card__subhead">Beberapa hujan meteor tahunan</h3>
-<dl class="fen-card__data">
-<div><dt>Lyrid</dt><dd>April, dari komet Thatcher</dd></div>
-<div><dt>Eta Aquariid</dt><dd>Mei, dari komet Halley</dd></div>
-<div><dt>Perseid</dt><dd>Juli sampai Agustus, dari komet Swift-Tuttle</dd></div>
-<div><dt>Orionid</dt><dd>Oktober, juga dari komet Halley</dd></div>
-<div><dt>Geminid</dt><dd>Desember, dari asteroid 3200 Phaethon</dd></div>
-</dl>
-<div class="fen-card__funfact rounded-r-xl border border-white/10 border-l-4 border-amber-300 p-4">
-<span class="fen-card__funfact-label">Fun Fact</span>
-<p>
+
+      <h3 class="fen-card__subhead">Istilah yang sering tertukar</h3>
+      <ul class="fen-card__facts">
+        <li><strong>Meteoroid:</strong> butiran atau bongkahan materi saat masih melayang di ruang angkasa</li>
+        <li><strong>Meteor:</strong> kilatan cahaya yang muncul ketika benda itu terbakar di atmosfer</li>
+        <li><strong>Meteorit:</strong> sisa benda yang tidak habis terbakar dan sampai ke permukaan Bumi</li>
+        <li><strong>Radian:</strong> titik di langit yang menjadi asal semua jejak meteor. Nama hujan meteor diambil dari rasi tempat titik ini berada</li>
+      </ul>
+
+      <h3 class="fen-card__subhead">Beberapa hujan meteor tahunan</h3>
+      <dl class="fen-card__data">
+        <div><dt>Lyrid</dt><dd>April, dari komet Thatcher</dd></div>
+        <div><dt>Eta Aquariid</dt><dd>Mei, dari komet Halley</dd></div>
+        <div><dt>Perseid</dt><dd>Juli sampai Agustus, dari komet Swift-Tuttle</dd></div>
+        <div><dt>Orionid</dt><dd>Oktober, juga dari komet Halley</dd></div>
+        <div><dt>Geminid</dt><dd>Desember, dari asteroid 3200 Phaethon</dd></div>
+      </dl>
+
+      <div class="fen-card__funfact">
+        <span class="fen-card__funfact-label">Fun Fact</span>
+        <p>
           Sebagian besar meteor yang terlihat sangat terang sebenarnya berasal dari
           partikel sekecil butir pasir. Yang membuatnya menyala bukan ukurannya,
           melainkan kecepatannya yang mencapai puluhan kilometer per detik. Kilatannya
           pun terjadi jauh di atas kepala, sekitar 75 sampai 100 kilometer di atas
           permukaan Bumi.
         </p>
-</div>
-</div>
-</section>
-<!-- ============ 4. BINTIK MERAH BESAR ============ -->
-<section class="fen-card grid gap-6 border-t border-white/10 pt-8 md:grid-cols-[320px_minmax(0,1fr)]" id="bintik-merah">
-<div class="fen-card__visual rounded-2xl border border-white/10 p-4 md:sticky md:top-6">
-<img alt="Perbandingan ukuran Bintik Merah Besar Jupiter dengan Bumi" decoding="async" height="240" loading="lazy" src="assets/fenomena/bintik-merah.svg" width="320"/>
-</div>
-<div class="fen-card__content">
-<p class="fen-card__index">Fenomena 04</p>
-<h2 class="fen-card__name">Bintik Merah Besar di Jupiter</h2>
-<p class="fen-card__tagline">Badai yang tidak pernah kehabisan tenaga</p>
-<p class="fen-card__lead">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. BINTIK MERAH BESAR ============ -->
+  <section class="fen-card" id="bintik-merah">
+    <div class="fen-card__visual">
+      <img src="assets/fenomena/bintik-merah.svg" alt="Perbandingan ukuran Bintik Merah Besar Jupiter dengan Bumi" width="320" height="240" loading="lazy" decoding="async">
+    </div>
+    <div class="fen-card__content">
+      <p class="fen-card__index">Fenomena 04</p>
+      <h2 class="fen-card__name">Bintik Merah Besar di Jupiter</h2>
+      <p class="fen-card__tagline">Badai yang tidak pernah kehabisan tenaga</p>
+
+      <p class="fen-card__lead">
         Bintik Merah Besar adalah badai raksasa di belahan selatan Jupiter yang berputar
         berlawanan arah jarum jam. Di Bumi, badai sekuat itu akan melemah dalam hitungan
         hari begitu bergerak ke daratan. Jupiter tidak punya permukaan padat yang bisa
         menghambat, sehingga badai ini terus berputar tanpa penghalang dan sudah diamati
         para astronom sejak abad kesembilan belas.
       </p>
-<h3 class="fen-card__subhead">Angka penting</h3>
-<dl class="fen-card__data">
-<div><dt>Lokasi</dt><dd>belahan selatan Jupiter</dd></div>
-<div><dt>Lebar badai</dt><dd>sekitar 16.000 km, lebih lebar dari Bumi</dd></div>
-<div><dt>Arah putaran</dt><dd>antisiklon, berlawanan arah jarum jam</dd></div>
-<div><dt>Kecepatan angin tepi</dt><dd>ratusan kilometer per jam</dd></div>
-<div><dt>Catatan pengamatan</dt><dd>berlanjut sejak tahun 1800-an</dd></div>
-</dl>
-<h3 class="fen-card__subhead">Kenapa warnanya merah</h3>
-<p class="fen-card__lead">
+
+      <h3 class="fen-card__subhead">Angka penting</h3>
+      <dl class="fen-card__data">
+        <div><dt>Lokasi</dt><dd>belahan selatan Jupiter</dd></div>
+        <div><dt>Lebar badai</dt><dd>sekitar 16.000 km, lebih lebar dari Bumi</dd></div>
+        <div><dt>Arah putaran</dt><dd>antisiklon, berlawanan arah jarum jam</dd></div>
+        <div><dt>Kecepatan angin tepi</dt><dd>ratusan kilometer per jam</dd></div>
+        <div><dt>Catatan pengamatan</dt><dd>berlanjut sejak tahun 1800-an</dd></div>
+      </dl>
+
+      <h3 class="fen-card__subhead">Kenapa warnanya merah</h3>
+      <p class="fen-card__lead">
         Jawabannya belum benar-benar tuntas. Hipotesis yang paling banyak dipakai adalah
         senyawa kimia di atmosfer Jupiter yang terurai oleh sinar ultraviolet dari
         Matahari lalu menghasilkan zat berwarna kemerahan di puncak awan badai. Warnanya
         pun tidak tetap, kadang memucat dan kadang menajam dari tahun ke tahun.
       </p>
-<div class="fen-card__funfact rounded-r-xl border border-white/10 border-l-4 border-amber-300 p-4">
-<span class="fen-card__funfact-label">Fun Fact</span>
-<p>
+
+      <div class="fen-card__funfact">
+        <span class="fen-card__funfact-label">Fun Fact</span>
+        <p>
           Bintik Merah Besar sedang menyusut. Pengamatan abad lalu menunjukkan bentuknya
           jauh lebih lonjong dan lebar, sedangkan sekarang bentuknya makin bulat dan
           mengecil. Wahana Juno milik NASA juga menemukan bahwa badai ini bukan sekadar
           lapisan tipis di permukaan, melainkan menghunjam ratusan kilometer ke dalam
           atmosfer Jupiter.
         </p>
-</div>
-</div>
-</section>
-<!-- ============ 5. OLYMPUS MONS ============ -->
-<section class="fen-card grid gap-6 border-t border-white/10 pt-8 md:grid-cols-[320px_minmax(0,1fr)]" id="olympus-mons">
-<div class="fen-card__visual rounded-2xl border border-white/10 p-4 md:sticky md:top-6">
-<img alt="Profil Olympus Mons dibandingkan dengan Gunung Everest" decoding="async" height="240" loading="lazy" src="assets/fenomena/olympus-mons.svg" width="320"/>
-</div>
-<div class="fen-card__content">
-<p class="fen-card__index">Fenomena 05</p>
-<h2 class="fen-card__name">Olympus Mons di Mars</h2>
-<p class="fen-card__tagline">Gunung berapi tertinggi yang diketahui di tata surya</p>
-<p class="fen-card__lead">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. OLYMPUS MONS ============ -->
+  <section class="fen-card" id="olympus-mons">
+    <div class="fen-card__visual">
+      <img src="assets/fenomena/olympus-mons.svg" alt="Profil Olympus Mons dibandingkan dengan Gunung Everest" width="320" height="240" loading="lazy" decoding="async">
+    </div>
+    <div class="fen-card__content">
+      <p class="fen-card__index">Fenomena 05</p>
+      <h2 class="fen-card__name">Olympus Mons di Mars</h2>
+      <p class="fen-card__tagline">Gunung berapi tertinggi yang diketahui di tata surya</p>
+
+      <p class="fen-card__lead">
         Olympus Mons adalah gunung berapi perisai, yaitu gunung yang terbentuk dari lava
         encer yang mengalir jauh sebelum membeku. Karena itu bentuknya melebar dan
         landai, bukan runcing seperti gunung berapi kerucut. Tingginya sekitar 22
         kilometer di atas dataran sekitarnya, kira-kira dua setengah kali tinggi Gunung
         Everest, dengan alas selebar kurang lebih 600 kilometer.
       </p>
-<h3 class="fen-card__subhead">Kenapa bisa setinggi itu</h3>
-<ul class="fen-card__facts space-y-2">
-<li><strong>Tidak ada lempeng yang bergeser:</strong> di Bumi, kerak bergerak di atas titik panas sehingga magma menghasilkan rangkaian gunung yang terpisah. Kerak Mars praktis diam, jadi lava menumpuk terus di satu titik yang sama selama jutaan tahun</li>
-<li><strong>Gravitasi lebih kecil:</strong> gravitasi Mars sekitar 38 persen gravitasi Bumi, sehingga tumpukan batuan setinggi itu tidak mudah ambruk oleh beratnya sendiri</li>
-<li><strong>Lava yang encer:</strong> aliran lava bisa menempuh jarak jauh dan membentuk lereng yang sangat landai</li>
-</ul>
-<dl class="fen-card__data">
-<div><dt>Jenis</dt><dd>gunung berapi perisai</dd></div>
-<div><dt>Tinggi</dt><dd>sekitar 22 km dari dataran sekitarnya</dd></div>
-<div><dt>Lebar alas</dt><dd>sekitar 600 km</dd></div>
-<div><dt>Kaldera puncak</dt><dd>kompleks kawah selebar puluhan kilometer</dd></div>
-<div><dt>Kemiringan lereng</dt><dd>sangat landai, rata-rata hanya beberapa derajat</dd></div>
-</dl>
-<div class="fen-card__funfact rounded-r-xl border border-white/10 border-l-4 border-amber-300 p-4">
-<span class="fen-card__funfact-label">Fun Fact</span>
-<p>
+
+      <h3 class="fen-card__subhead">Kenapa bisa setinggi itu</h3>
+      <ul class="fen-card__facts">
+        <li><strong>Tidak ada lempeng yang bergeser:</strong> di Bumi, kerak bergerak di atas titik panas sehingga magma menghasilkan rangkaian gunung yang terpisah. Kerak Mars praktis diam, jadi lava menumpuk terus di satu titik yang sama selama jutaan tahun</li>
+        <li><strong>Gravitasi lebih kecil:</strong> gravitasi Mars sekitar 38 persen gravitasi Bumi, sehingga tumpukan batuan setinggi itu tidak mudah ambruk oleh beratnya sendiri</li>
+        <li><strong>Lava yang encer:</strong> aliran lava bisa menempuh jarak jauh dan membentuk lereng yang sangat landai</li>
+      </ul>
+
+      <dl class="fen-card__data">
+        <div><dt>Jenis</dt><dd>gunung berapi perisai</dd></div>
+        <div><dt>Tinggi</dt><dd>sekitar 22 km dari dataran sekitarnya</dd></div>
+        <div><dt>Lebar alas</dt><dd>sekitar 600 km</dd></div>
+        <div><dt>Kaldera puncak</dt><dd>kompleks kawah selebar puluhan kilometer</dd></div>
+        <div><dt>Kemiringan lereng</dt><dd>sangat landai, rata-rata hanya beberapa derajat</dd></div>
+      </dl>
+
+      <div class="fen-card__funfact">
+        <span class="fen-card__funfact-label">Fun Fact</span>
+        <p>
           Kalau kamu berdiri di puncaknya, kamu tidak akan merasa sedang berada di gunung
           tertinggi. Lerengnya begitu landai dan alasnya begitu luas sehingga kaki gunung
           berada jauh di balik cakrawala. Mendakinya pun terasa lebih mirip berjalan di
           dataran yang menanjak sangat pelan daripada memanjat tebing.
         </p>
-</div>
-</div>
-</section>
-<!-- ============ RINGKASAN ============ -->
-<section class="ringkas" id="ringkasan">
-<h2 class="ringkas__title">Membedakan dua jenis gerhana</h2>
-<p class="ringkas__lead">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RINGKASAN ============ -->
+  <section class="ringkas" id="ringkasan">
+    <h2 class="ringkas__title">Membedakan dua jenis gerhana</h2>
+    <p class="ringkas__lead">
       Dua fenomena pertama paling sering tertukar. Tabel ini merangkum pembedanya.
     </p>
-<div class="ringkas__scroll w-full overflow-x-auto">
-<table class="ringkas__table min-w-[560px] w-full">
-<caption class="sr-only">Perbandingan gerhana matahari dan gerhana bulan</caption>
-<thead>
-<tr>
-<th scope="col">Pembeda</th>
-<th scope="col">Gerhana Matahari</th>
-<th scope="col">Gerhana Bulan</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th scope="row">Posisi di tengah</th>
-<td data-label="Gerhana Matahari">Bulan</td>
-<td data-label="Gerhana Bulan">Bumi</td>
-</tr>
-<tr>
-<th scope="row">Fase Bulan</th>
-<td data-label="Gerhana Matahari">Bulan baru</td>
-<td data-label="Gerhana Bulan">Purnama</td>
-</tr>
-<tr>
-<th scope="row">Waktu kejadian</th>
-<td data-label="Gerhana Matahari">Siang hari</td>
-<td data-label="Gerhana Bulan">Malam hari</td>
-</tr>
-<tr>
-<th scope="row">Luas wilayah pengamat</th>
-<td data-label="Gerhana Matahari">Jalur sempit di permukaan Bumi</td>
-<td data-label="Gerhana Bulan">Separuh Bumi yang sedang malam</td>
-</tr>
-<tr>
-<th scope="row">Durasi</th>
-<td data-label="Gerhana Matahari">Menit</td>
-<td data-label="Gerhana Bulan">Puluhan menit hingga berjam-jam</td>
-</tr>
-<tr>
-<th scope="row">Keamanan mengamati</th>
-<td data-label="Gerhana Matahari">Wajib filter khusus</td>
-<td data-label="Gerhana Bulan">Aman dengan mata telanjang</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
+    <div class="ringkas__scroll">
+      <table class="ringkas__table">
+        <caption class="sr-only">Perbandingan gerhana matahari dan gerhana bulan</caption>
+        <thead>
+          <tr>
+            <th scope="col">Pembeda</th>
+            <th scope="col">Gerhana Matahari</th>
+            <th scope="col">Gerhana Bulan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Posisi di tengah</th>
+            <td data-label="Gerhana Matahari">Bulan</td>
+            <td data-label="Gerhana Bulan">Bumi</td>
+          </tr>
+          <tr>
+            <th scope="row">Fase Bulan</th>
+            <td data-label="Gerhana Matahari">Bulan baru</td>
+            <td data-label="Gerhana Bulan">Purnama</td>
+          </tr>
+          <tr>
+            <th scope="row">Waktu kejadian</th>
+            <td data-label="Gerhana Matahari">Siang hari</td>
+            <td data-label="Gerhana Bulan">Malam hari</td>
+          </tr>
+          <tr>
+            <th scope="row">Luas wilayah pengamat</th>
+            <td data-label="Gerhana Matahari">Jalur sempit di permukaan Bumi</td>
+            <td data-label="Gerhana Bulan">Separuh Bumi yang sedang malam</td>
+          </tr>
+          <tr>
+            <th scope="row">Durasi</th>
+            <td data-label="Gerhana Matahari">Menit</td>
+            <td data-label="Gerhana Bulan">Puluhan menit hingga berjam-jam</td>
+          </tr>
+          <tr>
+            <th scope="row">Keamanan mengamati</th>
+            <td data-label="Gerhana Matahari">Wajib filter khusus</td>
+            <td data-label="Gerhana Bulan">Aman dengan mata telanjang</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
 </main>
-<footer class="site-bawah border-t border-white/10 px-4 py-8 md:px-6">
-<p class="site-bawah__nav mx-auto flex w-full max-w-6xl flex-wrap gap-4">
-<a href="index.html">Beranda</a>
-<a href="planet.html">Planet</a>
-<a aria-current="page" href="fenomena.html">Fenomena Tata Surya</a>
-</p>
-<p class="site-bawah__sumber">
-    Data dirujuk dari NASA Science (Eclipses, Meteors &amp; Meteorites, Jupiter, Mars)
-    dan NASA Planetary Fact Sheet. Ilustrasi dibuat sendiri dalam format SVG.
-  </p>
-</footer>
+
+<footer class="site-footer">
+    <div class="wrap site-footer__kisi">
+      <div>
+        <p class="site-footer__merek">Jelajah Tata Surya</p>
+        <p>Proyek pembelajaran mata kuliah pemrograman web.</p>
+      </div>
+      <div>
+        <h4>Halaman</h4>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="planet.html">Planet</a></li>
+          <li><a href="fenomena.html">Fenomena Tata Surya</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Rujukan data</h4>
+        <ul>
+          <li><a href="https://science.nasa.gov/solar-system/" target="_blank" rel="noopener">NASA Science — Solar System</a></li>
+          <li><a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/" target="_blank" rel="noopener">NASA Planetary Fact Sheet</a></li>
+          <li><a href="https://www.iau.org/public/themes/pluto/" target="_blank" rel="noopener">IAU — Definisi planet 2006</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

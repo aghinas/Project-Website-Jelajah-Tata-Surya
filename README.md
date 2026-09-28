@@ -83,7 +83,3 @@ Angka dan fakta pada halaman beranda mengacu pada:
 - NASA Science, Solar System — https://science.nasa.gov/solar-system/
 - NASA Planetary Fact Sheet (NSSDC) — https://nssdc.gsfc.nasa.gov/planetary/factsheet/
 - IAU, definisi planet hasil sidang umum 2006 — https://www.iau.org/public/themes/pluto/
-
-
-## Tailwind CSS
-Website ini telah diintegrasikan dengan Tailwind CSS melalui Tailwind Play CDN. Utility classes Tailwind digunakan pada layout, responsivitas, navigasi, tombol, kartu, dan tabel; aset SVG dan JavaScript tetap dipertahankan.

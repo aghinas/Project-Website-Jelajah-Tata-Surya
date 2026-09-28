@@ -8,18 +8,7 @@
 (function () {
   "use strict";
 
-  /* ---------- 1. Tombol menu untuk layar kecil ---------- */
-  var tombolMenu = document.querySelector(".site-nav__tombol");
-  var menu = document.getElementById("menu-utama");
-
-  if (tombolMenu && menu) {
-    tombolMenu.addEventListener("click", function () {
-      var terbuka = menu.classList.toggle("is-buka");
-      tombolMenu.setAttribute("aria-expanded", String(terbuka));
-    });
-  }
-
-  /* ---------- 2. Pergantian fakta ---------- */
+  /* ---------- Pergantian fakta ---------- */
   var daftar = document.getElementById("fakta-daftar");
   var teks = document.getElementById("fakta-teks");
   var nomor = document.getElementById("fakta-nomor");

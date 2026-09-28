@@ -644,3 +644,172 @@ a { color: var(--accent); }
   html { scroll-behavior: auto; }
   * { transition-duration: 0.01ms !important; }
 }
+
+/* Bootstrap navbar */
+.topnav {
+  padding: 1.25rem clamp(1.25rem, 5vw, 3rem);
+  border-bottom: 1px solid var(--line);
+  z-index: 1;
+}
+.topnav .navbar-toggler {
+  border-color: var(--line);
+  border-radius: 999px;
+  padding: 0.55rem 0.7rem;
+}
+.topnav .navbar-toggler:focus {
+  box-shadow: none;
+}
+.topnav .navbar-toggler-icon {
+  filter: invert(1) brightness(1.4);
+}
+.topnav .navbar-nav {
+  margin-left: auto;
+  gap: 0.35rem;
+}
+.topnav__link {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  padding: 0.45rem 0.9rem !important;
+}
+.topnav__link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.topnav__link--active {
+  color: var(--accent) !important;
+  border-color: rgba(227,193,111,0.45);
+  background: rgba(227,193,111,0.08);
+}
+@media (max-width: 767.98px) {
+  .topnav {
+    padding: 0.9rem 1rem;
+  }
+  .topnav .navbar-toggler {
+    margin-left: auto;
+  }
+  .topnav .navbar-collapse {
+    width: 100%;
+    padding-top: 0.75rem;
+  }
+  .topnav .navbar-nav {
+    margin-left: 0;
+    align-items: stretch;
+  }
+  .topnav__link {
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* Shared navbar — kept identical across all pages */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(16, 23, 53, 0.88);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #2A3568;
+}
+.site-header .navbar {
+  --bs-navbar-padding-y: 0;
+  --bs-navbar-toggler-border-color: #2A3568;
+  background: transparent;
+}
+.site-header__isi {
+  width: min(100% - 2.5rem, 1120px);
+  margin-inline: auto;
+  padding-left: 0;
+  padding-right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 66px;
+  flex-wrap: wrap;
+}
+.site-merek {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  margin-right: 0;
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-size: 1.05rem;
+  color: #EDF1FF;
+  text-decoration: none;
+}
+.site-merek:hover { color: #EDF1FF; }
+.site-header .site-nav { flex-grow: 1; }
+.site-header .site-nav .navbar-nav { align-items: center; }
+.site-header .site-nav__tautan {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #9FA8D0;
+  text-decoration: none;
+  font-size: .93rem;
+  padding: .4rem .85rem;
+  border-radius: 999px;
+}
+.site-header .site-nav__tautan:hover { color: #EDF1FF; background: rgba(111,201,224,.10); }
+.site-header .site-nav__tautan.is-aktif {
+  color: #D9A441;
+  background: rgba(217,164,65,.12);
+}
+.site-header .site-nav__tombol {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 999px;
+}
+.site-header .navbar-toggler:focus { box-shadow: none; }
+.site-header .navbar-toggler-icon {
+  width: 1.1em;
+  height: 1.1em;
+  background-image: var(--bs-navbar-toggler-icon-bg);
+  filter: invert(1) brightness(1.4);
+}
+@media (max-width: 767.98px) {
+  .site-header .site-nav__tombol { display: inline-flex; align-items: center; justify-content: center; }
+  .site-header .site-nav { width: 100%; }
+  .site-header .site-nav .navbar-nav { align-items: stretch; padding-bottom: .75rem; }
+  .site-header .site-nav__tautan { padding: .7rem .85rem; }
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid #2A3568;
+  background: #0A1029;
+  color: #9FA8D0;
+  padding: 3rem 0 1.75rem;
+  margin-top: 4rem;
+  font-size: 0.92rem;
+}
+.site-footer__kisi {
+  width: min(100% - 2.5rem, 1120px);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 2rem;
+}
+.site-footer__merek {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-size: 1.1rem;
+  color: #EDF1FF;
+  margin-bottom: 0.4rem;
+}
+.site-footer h4 {
+  font-size: 0.95rem;
+  color: #EDF1FF;
+  margin-bottom: 0.7rem;
+}
+.site-footer ul { list-style: none; margin: 0; padding: 0; }
+.site-footer li { margin-bottom: 0.4rem; }
+.site-footer a { color: #9FA8D0; text-decoration: none; }
+.site-footer a:hover { color: #6FC9E0; text-decoration: underline; }
+@media (max-width: 720px) {
+  .site-footer__kisi { grid-template-columns: 1fr; gap: 1.5rem; }
+  .site-footer { padding: 2rem 1.25rem 1.75rem; }
+}

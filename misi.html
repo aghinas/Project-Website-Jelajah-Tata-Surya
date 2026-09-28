@@ -1,16 +1,33 @@
 <!DOCTYPE html>
+
 <html lang="id">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8"/>
 <!-- Tautan "Misi Antariksa" di navbar index.html menunjuk ke misi.html.
      Halaman ketiga akhirnya diberi nama Fenomena Tata Surya, jadi berkas ini
      hanya meneruskan pengunjung ke fenomena.html supaya tautan di halaman 1
      tidak perlu diubah. Hapus berkas ini kalau navbar index.html sudah
      diarahkan langsung ke fenomena.html. -->
-<meta http-equiv="refresh" content="0; url=fenomena.html">
+<meta content="0; url=fenomena.html" http-equiv="refresh"/>
 <title>Fenomena Tata Surya</title>
-</head>
-<body>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Archivo', 'ui-sans-serif', 'system-ui'],
+          display: ['Fraunces', 'ui-serif', 'serif']
+        },
+        colors: {
+          space: '#0b1020',
+          accent: '#e3c16f'
+        }
+      }
+    }
+  }
+</script>
+<script src="https://cdn.tailwindcss.com"></script></head>
+<body><!-- Tailwind CSS enabled: utility classes are used for layout, responsive behavior, components, and spacing. -->
 <p>Halaman dipindahkan. <a href="fenomena.html">Buka Fenomena Tata Surya</a>.</p>
 </body>
 </html>

@@ -10,7 +10,7 @@
   --card-bg: rgba(255,255,255,0.03);
   --accent: #E3C16F; /* warm gold, echoes sunlight */
   --font-display: 'Fraunces', serif;
-  --font-body: 'Space Grotesk', sans-serif;
+  --font-body: 'Archivo', sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -54,10 +54,12 @@ a { color: var(--accent); }
    ========================================================== */
 .topnav {
   position: relative;
-  z-index: 1;
+  z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
   padding: 1.25rem clamp(1.25rem, 5vw, 3rem);
   border-bottom: 1px solid var(--line);
   font-size: 0.9rem;
@@ -78,6 +80,12 @@ a { color: var(--accent); }
 
 .topnav__page {
   color: var(--ink-dim);
+}
+
+.topnav__link--active {
+  color: var(--accent);
+  border-color: rgba(227,193,111,0.45);
+  background: rgba(227,193,111,0.08);
 }
 
 /* ==========================================================
@@ -354,66 +362,126 @@ a { color: var(--accent); }
 }
 
 /* ==========================================================
-   FOOTER BERANDA
+   FOOTER
    ========================================================== */
 .site-footer {
   position: relative;
   z-index: 1;
-  border-top: 1px solid #2A3568;
-  background: #0A1029;
-  color: #9FA8D0;
-  padding: 3rem 0 1.75rem;
-  margin-top: 4rem;
-  font-size: 0.92rem;
+  text-align: center;
+  padding: 2rem 1rem 3rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink-dim);
+  font-size: 0.85rem;
 }
 
-.site-footer__kisi {
-  width: min(100% - 2.5rem, 1120px);
-  margin-inline: auto;
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
-  gap: 2rem;
+.site-footer__nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem 1.25rem;
+  margin-bottom: 0.75rem;
 }
 
-.site-footer__merek {
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: 1.1rem;
-  color: #EDF1FF;
-  margin-bottom: 0.4rem;
+.site-footer__nav a {
+  color: var(--ink);
+  text-decoration: none;
 }
 
-.site-footer h4 {
-  font-size: 0.95rem;
-  color: #EDF1FF;
-  margin-bottom: 0.7rem;
+.site-footer__nav a:hover,
+.site-footer__nav a[aria-current="page"] {
+  color: var(--accent);
 }
 
-.site-footer ul { list-style: none; margin: 0; padding: 0; }
-.site-footer li { margin-bottom: 0.4rem; }
-.site-footer a { color: #9FA8D0; text-decoration: none; }
-.site-footer a:hover { color: #6FC9E0; text-decoration: underline; }
-
-@media (max-width: 720px) {
-  .site-footer__kisi { grid-template-columns: 1fr; gap: 1.5rem; }
+.site-footer p {
+  max-width: 70ch;
+  margin: 0 auto;
 }
 
 /* ==========================================================
    RESPONSIVE
    ========================================================== */
 @media (max-width: 720px) {
+  .topnav {
+    justify-content: center;
+    padding: 0.9rem 1rem;
+  }
+
+  .topnav__link {
+    font-size: 0.82rem;
+    padding: 0.42rem 0.72rem;
+  }
+
+  .hero {
+    padding: 2.75rem 1rem 1.5rem;
+    max-width: none;
+  }
+
+  .hero__title {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .hero__subtitle {
+    font-size: 0.98rem;
+  }
+
+  .orbit-map {
+    margin-top: 2.25rem;
+    padding: 2rem 0.5rem 1rem;
+    justify-content: flex-start;
+    gap: clamp(1.35rem, 6vw, 2.5rem);
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  .orbit-map__line {
+    left: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .orbit-map__dot span {
+    display: block;
+    font-size: 0.65rem;
+  }
+
+  .planets {
+    padding: 1rem 1rem 3rem;
+    gap: 1rem;
+  }
+
   .planet-card,
   .planet-card:nth-of-type(even) {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 1.5rem 1.15rem;
     text-align: center;
+    border-radius: 18px;
   }
+
   .planet-card:nth-of-type(even) .planet-card__visual {
     order: 0;
   }
+
+  .planet-card__visual img {
+    width: 120px;
+    height: 120px;
+  }
+
   .planet-card__facts li {
     text-align: left;
+    overflow-wrap: anywhere;
   }
-  .orbit-map__dot span {
-    display: none;
+
+  .planet-card__funfact {
+    text-align: left;
+  }
+
+  .site-footer {
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  .site-footer__nav {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }
 
@@ -421,106 +489,3 @@ a { color: var(--accent); }
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; }
 }
-
-
-/* ---------- HEADER BERANDA ---------- */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 40;
-  background: rgba(16, 23, 53, 0.88);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #2A3568;
-}
-
-.site-header__isi {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  min-height: 66px;
-  flex-wrap: wrap;
-  width: min(100% - 2.5rem, 1120px);
-  margin-inline: auto;
-}
-
-.site-merek {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: 1.05rem;
-  color: #EDF1FF;
-  text-decoration: none;
-}
-
-.site-nav { display: flex; gap: 0.35rem; }
-
-.site-nav__tautan {
-  color: #9FA8D0;
-  text-decoration: none;
-  font-size: 0.93rem;
-  padding: 0.4rem 0.85rem;
-  border-radius: 999px;
-}
-.site-nav__tautan:hover { color: #EDF1FF; background: rgba(111, 201, 224, 0.10); }
-
-.site-nav__tautan.is-aktif {
-  color: #D9A441;
-  background: rgba(217, 164, 65, 0.12);
-}
-
-.site-nav__tombol {
-  display: none;
-  align-items: center;
-  gap: 0.5rem;
-  background: transparent;
-  border: 1px solid #2A3568;
-  color: #EDF1FF;
-  font-family: 'Archivo', "Segoe UI", system-ui, sans-serif;
-  font-size: 0.9rem;
-  padding: 0.45rem 0.9rem;
-  border-radius: 999px;
-  cursor: pointer;
-}
-.site-nav__garis,
-.site-nav__garis::before,
-.site-nav__garis::after {
-  display: block;
-  width: 16px;
-  height: 1.5px;
-  background: currentColor;
-  content: "";
-}
-.site-nav__garis { position: relative; }
-.site-nav__garis::before { position: absolute; top: -5px; }
-.site-nav__garis::after  { position: absolute; top: 5px; }
-
-@media (max-width: 720px) {
-  .site-nav__tombol { display: inline-flex; }
-  .site-nav {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    padding-bottom: 0.75rem;
-  }
-  .site-nav.is-buka { display: flex; }
-}
-
-
-/* ---------- Tombol kembali ke atas (memakai kelas utilitas Bootstrap) ---------- */
-.btn-keatas {
-  width: 46px;
-  height: 46px;
-  padding: 0;
-  border: none;
-  background: var(--accent);
-  color: var(--bg-deep);
-  font-size: 1.2rem;
-  line-height: 1;
-  z-index: 45;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.btn-keatas:hover { background: #EFBB5C; color: var(--bg-deep); }

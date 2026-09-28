@@ -48,23 +48,3 @@
 
   tampilkan(0);
 })();
-
-/* ---------- 3. Tombol kembali ke atas ---------- */
-(function () {
-  "use strict";
-
-  var tombolKeatas = document.getElementById("btn-keatas");
-  if (!tombolKeatas) return;
-
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 400) {
-      tombolKeatas.classList.remove("d-none");
-    } else {
-      tombolKeatas.classList.add("d-none");
-    }
-  });
-
-  tombolKeatas.addEventListener("click", function () {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-})();

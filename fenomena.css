@@ -19,7 +19,7 @@
   --accent-cool: #6FC9E0;
   --warn: #E8785A;
   --font-display: 'Fraunces', serif;
-  --font-body: 'Space Grotesk', sans-serif;
+  --font-body: 'Archivo', sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -105,6 +105,8 @@ a { color: var(--accent); }
 }
 
 .topnav__page { color: var(--ink-dim); }
+
+.topnav__link--active { color: var(--accent); border-color: rgba(227,193,111,0.45); background: rgba(227,193,111,0.08); }
 
 /* ==========================================================
    HERO
@@ -381,48 +383,29 @@ a { color: var(--accent); }
 .ringkas__table tbody tr:last-child td { border-bottom: 0; }
 
 /* ==========================================================
-   FOOTER BERANDA
+   FOOTER
    ========================================================== */
-.site-footer {
+.site-bawah {
   position: relative;
   z-index: 1;
-  border-top: 1px solid #2A3568;
-  background: #0A1029;
-  color: #9FA8D0;
-  padding: 3rem 0 1.75rem;
-  margin-top: 4rem;
-  font-size: 0.92rem;
+  border-top: 1px solid var(--line);
+  padding: 2rem clamp(1.25rem, 5vw, 3rem) 2.5rem;
+  color: var(--ink-dim);
+  font-size: 0.88rem;
 }
 
-.site-footer__kisi {
-  width: min(100% - 2.5rem, 1120px);
-  margin-inline: auto;
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
-  gap: 2rem;
+.site-bawah__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin: 0 0 0.75rem;
 }
 
-.site-footer__merek {
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: 1.1rem;
-  color: #EDF1FF;
-  margin-bottom: 0.4rem;
-}
+.site-bawah__nav a { text-decoration: none; color: var(--ink); }
+.site-bawah__nav a:hover { color: var(--accent); }
+.site-bawah__nav a[aria-current="page"] { color: var(--accent); }
 
-.site-footer h4 {
-  font-size: 0.95rem;
-  color: #EDF1FF;
-  margin-bottom: 0.7rem;
-}
-
-.site-footer ul { list-style: none; margin: 0; padding: 0; }
-.site-footer li { margin-bottom: 0.4rem; }
-.site-footer a { color: #9FA8D0; text-decoration: none; }
-.site-footer a:hover { color: #6FC9E0; text-decoration: underline; }
-
-@media (max-width: 720px) {
-  .site-footer__kisi { grid-template-columns: 1fr; gap: 1.5rem; }
-}
+.site-bawah__sumber { margin: 0; max-width: 70ch; }
 
 /* ==========================================================
    RESPONSIF
@@ -432,6 +415,99 @@ a { color: var(--accent); }
   .fen-card__visual {
     position: static;
     max-width: 420px;
+  }
+}
+
+@media (max-width: 720px) {
+  .topnav {
+    justify-content: center;
+    padding: 0.9rem 1rem;
+  }
+
+  .topnav__link {
+    font-size: 0.82rem;
+    padding: 0.42rem 0.72rem;
+  }
+
+  .hero {
+    padding: 2.75rem 1rem 1.5rem;
+    max-width: none;
+  }
+
+  .hero__title {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .hero__subtitle {
+    font-size: 0.98rem;
+  }
+
+  .chips {
+    gap: 0.45rem;
+    margin-top: 1.75rem;
+  }
+
+  .chip {
+    font-size: 0.78rem;
+    padding: 0.35rem 0.72rem;
+  }
+
+  .fenomena {
+    padding: 0.5rem 1rem 2.5rem;
+    gap: 1.5rem;
+  }
+
+  .fen-card {
+    gap: 1.25rem;
+    padding-top: 1.5rem;
+  }
+
+  .fen-card__visual {
+    width: 100%;
+    max-width: 360px;
+    margin-inline: auto;
+    padding: 0.75rem;
+  }
+
+  .fen-card__name {
+    font-size: clamp(1.55rem, 8vw, 2.2rem);
+  }
+
+  .fen-card__lead,
+  .fen-card__facts,
+  .fen-card__data,
+  .fen-card__funfact,
+  .fen-card__warning {
+    max-width: none;
+  }
+
+  .fen-card__data > div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+  }
+
+  .fen-card__data dd {
+    text-align: left;
+    overflow-wrap: anywhere;
+  }
+
+  .ringkas {
+    margin-top: 0.5rem;
+  }
+
+  .ringkas__scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .site-bawah {
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  .site-bawah__nav {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }
 
@@ -447,106 +523,3 @@ a { color: var(--accent); }
   html { scroll-behavior: auto; }
   * { transition-duration: 0.01ms !important; }
 }
-
-
-/* ---------- HEADER BERANDA ---------- */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 40;
-  background: rgba(16, 23, 53, 0.88);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #2A3568;
-}
-
-.site-header__isi {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  min-height: 66px;
-  flex-wrap: wrap;
-  width: min(100% - 2.5rem, 1120px);
-  margin-inline: auto;
-}
-
-.site-merek {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: 1.05rem;
-  color: #EDF1FF;
-  text-decoration: none;
-}
-
-.site-nav { display: flex; gap: 0.35rem; }
-
-.site-nav__tautan {
-  color: #9FA8D0;
-  text-decoration: none;
-  font-size: 0.93rem;
-  padding: 0.4rem 0.85rem;
-  border-radius: 999px;
-}
-.site-nav__tautan:hover { color: #EDF1FF; background: rgba(111, 201, 224, 0.10); }
-
-.site-nav__tautan.is-aktif {
-  color: #D9A441;
-  background: rgba(217, 164, 65, 0.12);
-}
-
-.site-nav__tombol {
-  display: none;
-  align-items: center;
-  gap: 0.5rem;
-  background: transparent;
-  border: 1px solid #2A3568;
-  color: #EDF1FF;
-  font-family: 'Archivo', "Segoe UI", system-ui, sans-serif;
-  font-size: 0.9rem;
-  padding: 0.45rem 0.9rem;
-  border-radius: 999px;
-  cursor: pointer;
-}
-.site-nav__garis,
-.site-nav__garis::before,
-.site-nav__garis::after {
-  display: block;
-  width: 16px;
-  height: 1.5px;
-  background: currentColor;
-  content: "";
-}
-.site-nav__garis { position: relative; }
-.site-nav__garis::before { position: absolute; top: -5px; }
-.site-nav__garis::after  { position: absolute; top: 5px; }
-
-@media (max-width: 720px) {
-  .site-nav__tombol { display: inline-flex; }
-  .site-nav {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    padding-bottom: 0.75rem;
-  }
-  .site-nav.is-buka { display: flex; }
-}
-
-
-/* ---------- Tombol kembali ke atas (memakai kelas utilitas Bootstrap) ---------- */
-.btn-keatas {
-  width: 46px;
-  height: 46px;
-  padding: 0;
-  border: none;
-  background: var(--accent);
-  color: var(--bg-deep);
-  font-size: 1.2rem;
-  line-height: 1;
-  z-index: 45;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.btn-keatas:hover { background: #EFBB5C; color: var(--bg-deep); }

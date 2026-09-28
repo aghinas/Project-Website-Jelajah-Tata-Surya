@@ -258,4 +258,8 @@
 @media (max-width: 520px) {
   .hero__orbit { opacity: 0.45; }
   .kartu-planet img { width: 78px; }
+  .hero__aksi .btn { flex: 1 1 100%; text-align: center; }
+  .pembuka__data dl > div { flex-wrap: wrap; gap: 0.15rem 1rem; }
+  .planet__daftar { grid-template-columns: minmax(0, 1fr); }
+  .fakta__kaki .btn { width: 100%; text-align: center; }
 }

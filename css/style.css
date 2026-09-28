@@ -27,7 +27,7 @@
 /* ---------- 2. Dasar ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 
 body {
   margin: 0;
@@ -222,7 +222,9 @@ a:hover { color: var(--kuningan); }
 
 /* ---------- 6. Responsif bersama ---------- */
 @media (max-width: 720px) {
-  .site-nav__tombol { display: inline-flex; }
+  .site-nav__tombol { display: inline-flex; min-height: 44px; }
+  .site-nav__tautan { padding: 0.7rem 0.85rem; }
+  .site-header__isi { padding-block: 0.4rem; }
 
   .site-nav {
     display: none;

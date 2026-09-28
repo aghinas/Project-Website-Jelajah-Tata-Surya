@@ -24,7 +24,7 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 
 html, body {
   margin: 0;
@@ -170,6 +170,7 @@ a { color: var(--accent); }
   z-index: 1;
   padding: 1rem clamp(1.25rem, 5vw, 3rem) 3rem;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(2rem, 5vw, 3.5rem);
   max-width: 1120px;
 }
@@ -411,7 +412,7 @@ a { color: var(--accent); }
    RESPONSIF
    ========================================================== */
 @media (max-width: 880px) {
-  .fen-card { grid-template-columns: 1fr; }
+  .fen-card { grid-template-columns: minmax(0, 1fr); }
   .fen-card__visual {
     position: static;
     max-width: 420px;
@@ -517,6 +518,75 @@ a { color: var(--accent); }
     gap: 0.15rem;
   }
   .fen-card__data dd { text-align: left; }
+}
+
+/* ---------- Tabel jadi kartu di layar HP ---------- */
+@media (max-width: 720px) {
+  .fen-card__name,
+  .fen-card__tagline,
+  .fen-card__lead,
+  .fen-card__facts li,
+  .fen-card__funfact p,
+  .fen-card__warning { overflow-wrap: anywhere; }
+
+  .ringkas__scroll { overflow-x: visible; }
+
+  .ringkas__table,
+  .ringkas__table tbody,
+  .ringkas__table tr,
+  .ringkas__table th,
+  .ringkas__table td { display: block; width: 100%; min-width: 0; }
+
+  .ringkas__table thead {
+    position: absolute;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .ringkas__table tbody tr {
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 0.35rem 1rem 0.6rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .ringkas__table tbody th {
+    width: 100%;
+    padding: 0.7rem 0 0.5rem;
+    color: var(--accent);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .ringkas__table td {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    text-align: right;
+    border-bottom: 1px dashed var(--line);
+  }
+  .ringkas__table td:last-child { border-bottom: 0; }
+
+  .ringkas__table td::before {
+    content: attr(data-label);
+    flex: 0 0 42%;
+    text-align: left;
+    color: var(--ink-dim);
+    font-size: 0.82rem;
+  }
+
+  .ringkas__table tbody tr:last-child th,
+  .ringkas__table tbody tr:last-child td { border-bottom: 1px dashed var(--line); }
+  .ringkas__table tbody tr:last-child td:last-child { border-bottom: 0; }
+}
+
+@media (max-width: 380px) {
+  .topnav { gap: 0.4rem; }
+  .topnav__link { font-size: 0.76rem; padding: 0.4rem 0.6rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

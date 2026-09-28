@@ -34,8 +34,11 @@ html, body {
   font-family: var(--font-body);
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
 }
+
+/* clip (bukan hidden) supaya body tidak menjadi wadah scroll baru;
+   dengan begitu position: sticky dan scroll halus di HP tetap normal */
+html, body { overflow-x: clip; }
 
 a { color: var(--accent); }
 
@@ -74,6 +77,7 @@ a { color: var(--accent); }
   background-size: 100% 100%;
   opacity: 0.5;
 }
+@supports (height: 100lvh) { .starfield { height: 100lvh; } }
 
 /* ==========================================================
    NAV
@@ -198,6 +202,7 @@ a { color: var(--accent); }
   display: block;
   width: 100%;
   height: auto;
+  aspect-ratio: 4 / 3;   /* ruang gambar dipesan lebih dulu, tidak ada loncatan layout */
 }
 
 .fen-card__content { min-width: 0; }
@@ -415,7 +420,9 @@ a { color: var(--accent); }
   .fen-card { grid-template-columns: minmax(0, 1fr); }
   .fen-card__visual {
     position: static;
-    max-width: 420px;
+    width: 100%;
+    max-width: 480px;
+    margin-inline: auto;
   }
 }
 
@@ -443,15 +450,41 @@ a { color: var(--accent); }
     font-size: 0.98rem;
   }
 
+  /* daftar isi: kisi 2 kolom, tiap tombol >= 44px agar mudah disentuh */
   .chips {
-    gap: 0.45rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
     margin-top: 1.75rem;
   }
+  .chips li:last-child:nth-child(odd) { grid-column: 1 / -1; }
 
   .chip {
-    font-size: 0.78rem;
-    padding: 0.35rem 0.72rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
   }
+
+  /* navigasi atas: tombol cukup besar untuk jari */
+  .topnav__link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+  }
+
+  /* teks isi sedikit lebih lega di layar kecil */
+  .fen-card__lead,
+  .fen-card__facts { line-height: 1.65; }
+
+  .fen-card__subhead { margin-top: 1.5rem; }
+
+  .fen-card__funfact,
+  .fen-card__warning { padding: 1rem 1.05rem; }
 
   .fenomena {
     padding: 0.5rem 1rem 2.5rem;
@@ -465,9 +498,10 @@ a { color: var(--accent); }
 
   .fen-card__visual {
     width: 100%;
-    max-width: 360px;
+    max-width: 480px;
     margin-inline: auto;
-    padding: 0.75rem;
+    padding: 0.5rem;
+    border-radius: 14px;
   }
 
   .fen-card__name {
@@ -582,6 +616,23 @@ a { color: var(--accent); }
   .ringkas__table tbody tr:last-child th,
   .ringkas__table tbody tr:last-child td { border-bottom: 1px dashed var(--line); }
   .ringkas__table tbody tr:last-child td:last-child { border-bottom: 0; }
+}
+
+@supports (padding: max(0px)) {
+  .topnav, .fenomena, .site-bawah, .hero {
+    padding-left: max(clamp(1.25rem, 5vw, 3rem), env(safe-area-inset-left));
+    padding-right: max(clamp(1.25rem, 5vw, 3rem), env(safe-area-inset-right));
+  }
+  @media (max-width: 720px) {
+    .topnav, .hero, .site-bawah {
+      padding-left: max(1rem, env(safe-area-inset-left));
+      padding-right: max(1rem, env(safe-area-inset-right));
+    }
+    .fenomena {
+      padding-left: max(1rem, env(safe-area-inset-left));
+      padding-right: max(1rem, env(safe-area-inset-right));
+    }
+  }
 }
 
 @media (max-width: 380px) {
